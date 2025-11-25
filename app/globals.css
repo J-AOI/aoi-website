@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-aoi-bg text-aoi-fg antialiased;
+}
+
+a {
+  @apply text-aoi-fg/90 hover:text-aoi-fg transition-colors;
+}
