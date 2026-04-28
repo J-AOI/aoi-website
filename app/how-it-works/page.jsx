@@ -200,7 +200,7 @@ export default function HowItWorks() {
             </p>
 
             <p className="text-white font-bold border-l-2 border-[#00C2FF] pl-3">
-              No system is required to prove authority at execution.
+              Execution resolves conflict. It does not validate authority.
             </p>
           </div>
         </div>
