@@ -192,7 +192,7 @@ STATE_MISMATCH → AUTHORITY_DRIFT`}
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-3xl font-bold tracking-tight mb-6">
-              Authority Must Be Proven Before Execution
+              Authority Must Be Proven at Execution
             </h2>
             <p className="text-[14px] text-[#B6C2CF] leading-relaxed mb-4">
               AoI validates authority across systems at the moment execution occurs.
