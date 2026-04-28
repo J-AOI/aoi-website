@@ -1,126 +1,159 @@
-export default function HowItWorksPage() {
+import Link from "next/link";
+
+export default function HowItWorks() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-20 text-white">
+    <main className="bg-[#0A0F14] text-white">
 
-      <h1 className="text-4xl font-semibold mb-6">
-        How AO Integrity Works
-      </h1>
+      {/* HERO */}
+      <section className="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center space-y-6">
+        <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+          How It Works
+        </h1>
 
-      <p className="text-[#B6C2CF] leading-relaxed mb-12">
-        AO Integrity doesn’t monitor activity after the fact.
-        It verifies that authority is still valid at the moment execution occurs.
-      </p>
+        <p className="text-lg text-[#B6C2CF] max-w-2xl mx-auto">
+          Authority is not lost in a single system.
+          It drifts across systems—and execution continues anyway.
+        </p>
+      </section>
 
-      <div className="grid gap-8">
+      {/* STEP 1 — SETUP */}
+      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
+        <h2 className="text-2xl font-semibold">
+          1. Access is removed
+        </h2>
 
-        {/* STEP 1 */}
-        <div className="bg-[#111A23] border border-[#2A3A4A] rounded-xl p-6">
-          <p className="text-xs text-[#00C2FF] uppercase tracking-widest mb-2">
-            Step 1 — Observe
-          </p>
+        <p className="text-[#B6C2CF]">
+          A user is disabled. The system of record reflects the change.
+        </p>
 
-          <h2 className="text-xl font-semibold mb-2">
-            Capture Authority Across Systems
-          </h2>
-
-          <p className="text-[#B6C2CF] leading-relaxed">
-            AO Integrity pulls identity and access states from systems like
-            Entra, JumpCloud, and downstream applications at runtime.
-          </p>
+        <div className="bg-[#111A23] rounded-xl p-6 font-mono text-sm text-[#B6C2CF] whitespace-pre-line">
+{`JumpCloud: Disabled`}
         </div>
+      </section>
 
-        {/* STEP 2 */}
-        <div className="bg-[#111A23] border border-[#2A3A4A] rounded-xl p-6 border-l-4 border-l-[#00C2FF]">
-          <p className="text-xs text-[#00C2FF] uppercase tracking-widest mb-2">
-            Step 2 — Detect
-          </p>
+      {/* STEP 2 — DRIFT */}
+      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
+        <h2 className="text-2xl font-semibold">
+          2. Systems diverge
+        </h2>
 
-          <h2 className="text-xl font-semibold mb-2">
-            Identify Authority Mismatch
-          </h2>
+        <p className="text-[#B6C2CF]">
+          Other systems do not reflect the same state. No reconciliation occurs.
+        </p>
 
-          <p className="text-[#B6C2CF] leading-relaxed">
-            When systems disagree, AO Integrity flags mismatched authority states
-            before execution occurs.
-          </p>
+        <div className="bg-[#111A23] border border-[#2A3A4A] rounded-xl p-6 border-l-4 border-l-[#00C2FF] font-mono text-sm text-[#B6C2CF] whitespace-pre-line">
+{`JumpCloud: Disabled
+Entra: Enabled
+
+STATE_MISMATCH → AUTHORITY_DRIFT`}
         </div>
+      </section>
 
-        {/* STEP 3 */}
-        <div className="bg-[#111A23] border border-[#2A3A4A] rounded-xl p-6">
-          <p className="text-xs text-[#00C2FF] uppercase tracking-widest mb-2">
-            Step 3 — Enforce
-          </p>
+      {/* STEP 3 — EXECUTION */}
+      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
+        <h2 className="text-2xl font-semibold">
+          3. Execution still succeeds
+        </h2>
 
-          <h2 className="text-xl font-semibold mb-2">
-            Require Proof at Execution
-          </h2>
+        <p className="text-[#B6C2CF]">
+          Authentication tokens remain valid. Access continues.
+          Execution is not blocked.
+        </p>
 
-          <p className="text-[#B6C2CF] leading-relaxed">
-            Execution is only allowed when authority can be proven across systems.
-            If it cannot be verified, the action does not proceed.
-          </p>
-        </div>
-
-      </div>
-
-      {/* LIVE EXECUTION FLOW */}
-      <div className="mt-16">
-
-        <div className="bg-[#111A23] border border-[#2A3A4A] rounded-xl p-8 text-center">
-
-          <p className="text-xs text-[#00C2FF] uppercase tracking-widest mb-6">
-            Live Execution Flow
-          </p>
-
-          {/* SYSTEMS */}
-          <div className="flex justify-center items-center gap-6 mb-6 text-sm text-[#B6C2CF]">
-            <div className="px-4 py-2 border border-white/10 rounded-lg">Entra</div>
-            <div className="px-4 py-2 border border-white/10 rounded-lg">JumpCloud</div>
-            <div className="px-4 py-2 border border-white/10 rounded-lg">SaaS Apps</div>
+        <div className="bg-[#0F1720] border border-gray-700 rounded-xl p-6 font-mono text-sm text-gray-300 space-y-3">
+          <div>
+            <span className="text-gray-500">Expected:</span>{" "}
+            <span className="text-green-400">Access revoked</span>
           </div>
 
-          {/* SIGNAL */}
-          <p className="text-[#00C2FF] text-xs font-mono mb-4 animate-pulse">
-            SIGNAL DETECTED: AUTHORITY_DRIFT
-          </p>
-
-          {/* ARROW */}
-          <div className="text-[#00C2FF] text-xl mb-4">↓</div>
-
-          {/* AOI CORE */}
-          <div className="inline-block px-6 py-4 bg-[#0F1720] border border-[#00C2FF]/30 rounded-xl mb-6 shadow-[0_0_30px_rgba(0,194,255,0.15)]">
-            <p className="text-white font-semibold">
-              AO Integrity
-            </p>
-            <p className="text-xs text-[#B6C2CF] mt-1">
-              Validating Authority...
-            </p>
+          <div>
+            <span className="text-gray-500">Actual:</span>{" "}
+            <span className="text-red-400">Execution succeeds</span>
           </div>
-
-          {/* OUTCOME */}
-          <div className="flex justify-center gap-8 text-sm">
-
-            {/* PASS */}
-            <div className="px-4 py-2 border border-green-500/30 text-green-400 rounded-lg opacity-60">
-              PASS → Execute
-            </div>
-
-            {/* FAIL */}
-            <div className="px-4 py-2 border border-red-500/40 text-red-400 rounded-lg animate-pulse">
-              FAIL → Block
-            </div>
-
-          </div>
-
         </div>
 
-      </div>
+        <p className="text-white font-semibold border-l-2 border-[#00C2FF] pl-4">
+          Execution proceeds because authority was never revalidated.
+        </p>
+      </section>
 
-      <p className="text-white/50 mt-12 text-sm">
-        AO Integrity shifts governance from audit and monitoring
-        to real-time validation at execution.
-      </p>
+      {/* STEP 4 — TIMELINE */}
+      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
+        <h2 className="text-2xl font-semibold">
+          4. Drift persists over time
+        </h2>
 
-    </section>
+        <div className="bg-[#111A23] rounded-xl p-6 font-mono text-sm text-[#B6C2CF] whitespace-pre-line">
+{`Day 0: User disabled
+Day 3: Access still valid
+Day 14: Execution still succeeds
+
+→ Authority never revalidated`}
+        </div>
+      </section>
+
+      {/* STEP 5 — WHY */}
+      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
+        <h2 className="text-2xl font-semibold">
+          5. Why this happens
+        </h2>
+
+        <p className="text-[#B6C2CF]">
+          Identity systems define access. Security systems monitor behavior.
+          Neither is responsible for validating authority at execution.
+        </p>
+
+        <p className="text-white font-semibold">
+          No system is required to prove authority at execution.
+        </p>
+      </section>
+
+      {/* STEP 6 — AOI */}
+      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
+        <h2 className="text-2xl font-semibold">
+          6. AO Integrity
+        </h2>
+
+        <p className="text-[#B6C2CF]">
+          AO Integrity verifies authority across systems at the moment execution occurs.
+        </p>
+
+        <p className="text-white font-semibold">
+          Not before. Not after. At execution.
+        </p>
+      </section>
+
+      {/* STEP 7 — OUTPUT */}
+      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
+        <h2 className="text-2xl font-semibold">
+          7. What it produces
+        </h2>
+
+        <ul className="text-white/70 space-y-2">
+          <li>• Cross-system mismatch detection</li>
+          <li>• Authority drift identification</li>
+          <li>• Execution validation evidence</li>
+        </ul>
+      </section>
+
+      {/* CLOSE */}
+      <section className="max-w-4xl mx-auto px-6 py-24 text-center space-y-6">
+        <h2 className="text-3xl font-semibold">
+          Should this action still be allowed right now?
+        </h2>
+
+        <p className="text-[#B6C2CF]">
+          If authority cannot be proven, execution must not occur.
+        </p>
+
+        <Link
+          href="/contact"
+          className="inline-flex justify-center items-center rounded-xl bg-white text-black px-6 py-3 font-semibold hover:bg-white/90 transition"
+        >
+          Request Early Access
+        </Link>
+      </section>
+
+    </main>
   );
 }
