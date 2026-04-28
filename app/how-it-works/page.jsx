@@ -50,32 +50,74 @@ STATE_MISMATCH → AUTHORITY_DRIFT`}
       </section>
 
       {/* STEP 3 — EXECUTION */}
-      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
-        <h2 className="text-2xl font-semibold">
-          3. Execution still succeeds
-        </h2>
+<section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
 
-        <p className="text-[#B6C2CF]">
-          Authentication tokens remain valid. Access continues.
-          Execution is not blocked.
-        </p>
+  <h2 className="text-2xl font-semibold">
+    3. Execution still succeeds
+  </h2>
 
-        <div className="bg-[#0F1720] border border-gray-700 rounded-xl p-6 font-mono text-sm text-gray-300 space-y-3">
-          <div>
-            <span className="text-gray-500">Expected:</span>{" "}
-            <span className="text-green-400">Access revoked</span>
-          </div>
+  <p className="text-[#B6C2CF]">
+    Authentication tokens remain valid. Access continues.
+    Execution is not blocked.
+  </p>
 
-          <div>
-            <span className="text-gray-500">Actual:</span>{" "}
-            <span className="text-red-400">Execution succeeds</span>
-          </div>
-        </div>
+  <div className="bg-[#0F1720] border border-gray-700 rounded-xl p-6 font-mono text-sm text-gray-300 space-y-3">
+    <div>
+      <span className="text-gray-500">Expected:</span>{" "}
+      <span className="text-green-400">Access revoked</span>
+    </div>
 
-        <p className="text-white font-semibold border-l-2 border-[#00C2FF] pl-4">
-            Execution succeeded under invalid authority.
-        </p>
-      </section>
+    <div>
+      <span className="text-gray-500">Actual:</span>{" "}
+      <span className="text-red-400">Execution succeeds</span>
+    </div>
+  </div>
+
+  <p className="text-white font-semibold border-l-2 border-[#00C2FF] pl-4">
+    Execution succeeded under invalid authority.
+  </p>
+
+  {/* 🔥 EVIDENCE BLOCK (now properly placed) */}
+  <div className="bg-[#0A1520] border border-[#1A2830] rounded-xl p-6 mt-6 font-mono text-sm text-[#B6C2CF] space-y-4">
+
+    <div className="text-xs text-[#00C2FF] uppercase tracking-widest">
+      Execution Evidence
+    </div>
+
+    <div className="flex justify-between">
+      <span className="text-gray-500">Authority Integrity Score</span>
+      <span className="text-red-400 font-semibold">30 — HIGH RISK</span>
+    </div>
+
+    <div className="border-t border-[#1A2830] pt-4 space-y-2">
+      <div className="flex justify-between">
+        <span className="text-gray-500">Identity</span>
+        <span>alice.chen@example.com</span>
+      </div>
+
+      <div className="flex justify-between">
+        <span className="text-gray-500">JumpCloud</span>
+        <span className="text-red-400">Disabled</span>
+      </div>
+
+      <div className="flex justify-between">
+        <span className="text-gray-500">Entra</span>
+        <span className="text-green-400">Enabled</span>
+      </div>
+
+      <div className="flex justify-between">
+        <span className="text-gray-500">Drift Duration</span>
+        <span>30 days</span>
+      </div>
+    </div>
+
+    <div className="pt-3 text-[#00C2FF]">
+      → Execution succeeded under invalid authority
+    </div>
+
+  </div>
+
+</section>
 
       {/* STEP 4 — TIMELINE */}
       <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
