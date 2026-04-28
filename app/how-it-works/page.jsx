@@ -2,196 +2,283 @@ import Link from "next/link";
 
 export default function HowItWorks() {
   return (
-    <main className="bg-[#0A0F14] text-white">
+    <main className="bg-[#080C10] text-white">
 
       {/* HERO */}
-      <section className="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center space-y-6">
-        <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+      <section className="text-center px-6 pt-20 pb-16">
+        <p className="aoi-mono text-[10px] text-[#00C2FF] uppercase tracking-[0.18em] mb-4">
+          Execution Validation Engine
+        </p>
+
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
           How It Works
         </h1>
 
-        <p className="text-lg text-[#B6C2CF] max-w-2xl mx-auto">
+        <p className="aoi-mono text-[12px] text-[#7A8FA0] leading-relaxed max-w-md mx-auto">
           Authority is not lost in a single system.
-          It drifts across systems—and execution continues anyway.
+          <br />
+          It drifts across systems — and execution continues anyway.
         </p>
       </section>
 
-      {/* STEP 1 — SETUP */}
-      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
-        <h2 className="text-2xl font-semibold">
-          1. Access is removed
-        </h2>
+      {/* DIVIDER */}
+      <div className="h-px bg-gradient-to-r from-transparent via-[#1E2D3A] to-transparent mx-6" />
 
-        <p className="text-[#B6C2CF]">
-          A user is disabled. The system of record reflects the change.
-        </p>
+      {/* STEPS */}
+      <section className="max-w-[1100px] mx-auto px-6">
 
-        <div className="bg-[#111A23] rounded-xl p-6 font-mono text-sm text-[#B6C2CF] whitespace-pre-line">
-{`JumpCloud: Disabled`}
+        {/* STEP 1 */}
+        <div className="grid grid-cols-[48px_1fr] gap-x-6 py-10 border-b border-[#0D1620]">
+          <div className="flex flex-col items-center">
+            <div className="w-9 h-9 rounded-full bg-[#0A1520] border border-[#1A2830] flex items-center justify-center text-[#00C2FF] text-xs aoi-mono">
+              01
+            </div>
+            <div className="w-px bg-[#0D1620] flex-1 mt-2" />
+          </div>
+
+          <div>
+            <h2 className="text-lg font-bold mb-2">Access is removed</h2>
+            <p className="aoi-mono text-[12px] text-[#7A8FA0] mb-3">
+              A user is disabled. The system of record reflects the change.
+            </p>
+
+            <div className="bg-[#040810] border border-[#1A2830] p-3 aoi-mono text-[11px] text-[#B6C2CF]">
+              JumpCloud: Disabled
+            </div>
+          </div>
         </div>
-      </section>
 
-      {/* STEP 2 — DRIFT */}
-      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
-        <h2 className="text-2xl font-semibold">
-          2. Systems diverge
-        </h2>
+        {/* STEP 2 */}
+        <div className="grid grid-cols-[48px_1fr] gap-x-6 py-10 border-b border-[#0D1620]">
+          <div className="flex flex-col items-center">
+            <div className="w-9 h-9 rounded-full bg-[#0A1520] border border-[#1A2830] flex items-center justify-center text-[#00C2FF] text-xs aoi-mono">
+              02
+            </div>
+            <div className="w-px bg-[#0D1620] flex-1 mt-2" />
+          </div>
 
-        <p className="text-[#B6C2CF]">
-          Other systems do not reflect the same state. No reconciliation occurs.
-        </p>
+          <div>
+            <h2 className="text-lg font-bold mb-2">Systems diverge</h2>
+            <p className="aoi-mono text-[12px] text-[#7A8FA0] mb-4">
+              Other systems do not reflect the same state. No reconciliation occurs.
+            </p>
 
-        <div className="bg-[#111A23] border border-[#2A3A4A] rounded-xl p-6 border-l-4 border-l-[#00C2FF] font-mono text-sm text-[#B6C2CF] whitespace-pre-line">
-{`JumpCloud: Disabled
-Entra: Enabled
+            <div className="grid grid-cols-2 gap-2 mb-3">
+              <div className="bg-[#040810] border border-[#1A2830] p-3">
+                <p className="aoi-mono text-[10px] text-[#3A5060] mb-1">JumpCloud</p>
+                <p className="aoi-mono text-[12px] text-red-400">Disabled</p>
+              </div>
 
-STATE_MISMATCH → AUTHORITY_DRIFT`}
+              <div className="bg-[#040810] border border-[#1A2830] p-3">
+                <p className="aoi-mono text-[10px] text-[#3A5060] mb-1">Entra ID</p>
+                <p className="aoi-mono text-[12px] text-green-400">Enabled</p>
+              </div>
+            </div>
+
+            <div className="inline-block bg-[#002A33] border border-[#004E5E] px-3 py-1 text-[11px] aoi-mono text-[#00C2FF]">
+              STATE_MISMATCH → AUTHORITY_DRIFT
+            </div>
+          </div>
         </div>
-      </section>
 
-      {/* STEP 3 — EXECUTION */}
-<section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
+        {/* STEP 3 */}
+        <div className="grid grid-cols-[48px_1fr] gap-x-6 py-10 border-b border-[#0D1620]">
+          <div className="flex flex-col items-center">
+            <div className="w-9 h-9 rounded-full bg-[#0A1520] border border-[#1A2830] flex items-center justify-center text-[#00C2FF] text-xs aoi-mono">
+              03
+            </div>
+            <div className="w-px bg-[#0D1620] flex-1 mt-2" />
+          </div>
 
-  <h2 className="text-2xl font-semibold">
-    3. Execution still succeeds
-  </h2>
+          <div>
+            <h2 className="text-lg font-bold mb-2">Execution still succeeds</h2>
 
-  <p className="text-[#B6C2CF]">
-    Authentication tokens remain valid. Access continues.
-    Execution is not blocked.
-  </p>
+            <p className="aoi-mono text-[12px] text-[#7A8FA0] mb-4">
+              Authentication tokens remain valid. Access continues. Execution is not blocked.
+            </p>
 
-  <div className="bg-[#0F1720] border border-gray-700 rounded-xl p-6 font-mono text-sm text-gray-300 space-y-3">
-    <div>
-      <span className="text-gray-500">Expected:</span>{" "}
-      <span className="text-green-400">Access revoked</span>
-    </div>
+            <div className="bg-[#040810] border border-[#1A2830] border-t-2 border-red-400 p-4 mb-4">
+              <div className="flex justify-between text-[11px] aoi-mono border-b border-[#0D1620] pb-2 mb-2">
+                <span className="text-[#3A5060]">Expected</span>
+                <span className="text-green-400">Access revoked</span>
+              </div>
+              <div className="flex justify-between text-[11px] aoi-mono">
+                <span className="text-[#3A5060]">Actual</span>
+                <span className="text-red-400">Execution succeeds</span>
+              </div>
+            </div>
 
-    <div>
-      <span className="text-gray-500">Actual:</span>{" "}
-      <span className="text-red-400">Execution succeeds</span>
-    </div>
-  </div>
+            <p className="text-white font-bold border-l-2 border-[#00C2FF] pl-3 mb-4">
+              Execution succeeded under invalid authority.
+            </p>
 
-  <p className="text-white font-semibold border-l-2 border-[#00C2FF] pl-4">
-    Execution succeeded under invalid authority.
-  </p>
+            {/* EVIDENCE */}
+            <div className="bg-[#040810] border border-[#1A2830] border-l-4 border-[#00C2FF] p-4">
+              <div className="flex justify-between mb-3">
+                <span className="aoi-mono text-[10px] text-[#00C2FF] uppercase">
+                  Execution Evidence
+                </span>
+                <span className="aoi-mono text-[11px] text-red-400">
+                  Score 30 — HIGH RISK
+                </span>
+              </div>
 
-  {/* 🔥 EVIDENCE BLOCK (now properly placed) */}
-  <div className="bg-[#0A1520] border border-[#1A2830] rounded-xl p-6 mt-6 font-mono text-sm text-[#B6C2CF] space-y-4">
+              <div className="border-t border-[#0D1620] pt-3 space-y-2 text-[11px] aoi-mono">
+                <div className="flex justify-between">
+                  <span className="text-[#3A5060]">Identity</span>
+                  <span>alice.chen@example.com</span>
+                </div>
 
-    <div className="text-xs text-[#00C2FF] uppercase tracking-widest">
-      Execution Evidence
-    </div>
+                <div className="flex justify-between">
+                  <span className="text-[#3A5060]">JumpCloud</span>
+                  <span className="text-red-400">Disabled</span>
+                </div>
 
-    <div className="flex justify-between">
-      <span className="text-gray-500">Authority Integrity Score</span>
-      <span className="text-red-400 font-semibold">30 — HIGH RISK</span>
-    </div>
+                <div className="flex justify-between">
+                  <span className="text-[#3A5060]">Entra ID</span>
+                  <span className="text-green-400">Enabled</span>
+                </div>
 
-    <div className="border-t border-[#1A2830] pt-4 space-y-2">
-      <div className="flex justify-between">
-        <span className="text-gray-500">Identity</span>
-        <span>alice.chen@example.com</span>
-      </div>
+                <div className="flex justify-between">
+                  <span className="text-[#3A5060]">Drift Duration</span>
+                  <span>30 days</span>
+                </div>
+              </div>
 
-      <div className="flex justify-between">
-        <span className="text-gray-500">JumpCloud</span>
-        <span className="text-red-400">Disabled</span>
-      </div>
-
-      <div className="flex justify-between">
-        <span className="text-gray-500">Entra</span>
-        <span className="text-green-400">Enabled</span>
-      </div>
-
-      <div className="flex justify-between">
-        <span className="text-gray-500">Drift Duration</span>
-        <span>30 days</span>
-      </div>
-    </div>
-
-    <div className="pt-3 text-[#00C2FF]">
-      → Execution succeeded under invalid authority
-    </div>
-
-  </div>
-
-</section>
-
-      {/* STEP 4 — TIMELINE */}
-      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
-        <h2 className="text-2xl font-semibold">
-          4. Drift persists over time
-        </h2>
-
-        <div className="bg-[#111A23] rounded-xl p-6 font-mono text-sm text-[#B6C2CF] whitespace-pre-line">
-{`Day 0: User disabled
-Day 3: Access still valid
-Day 14: Execution still succeeds
-
-→ Authority never revalidated`}
+              <div className="mt-3 pt-3 border-t border-[#0D1620] text-[#00C2FF] text-[11px] aoi-mono">
+                → Execution succeeded under invalid authority
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      {/* STEP 5 — WHY */}
-      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
-        <h2 className="text-2xl font-semibold">
-          5. Why this happens
-        </h2>
+        {/* STEP 4 */}
+        <div className="grid grid-cols-[48px_1fr] gap-x-6 py-10 border-b border-[#0D1620]">
+          <div className="flex flex-col items-center">
+            <div className="w-9 h-9 rounded-full bg-[#0A1520] border border-[#1A2830] flex items-center justify-center text-[#00C2FF] text-xs aoi-mono">
+              04
+            </div>
+            <div className="w-px bg-[#0D1620] flex-1 mt-2" />
+          </div>
 
-        <p className="text-[#B6C2CF]">
-          Identity systems define access. Security systems monitor behavior.
-          Neither is responsible for validating authority at execution.
-        </p>
+          <div>
+            <h2 className="text-lg font-bold mb-2">Drift persists over time</h2>
 
-        <p className="text-white font-semibold">
-          No system is required to prove authority at execution.
-          Execution resolves conflict. It does not validate authority.
-        </p>
-      </section>
+            <div className="grid grid-cols-3 gap-2 text-[11px] aoi-mono">
+              <div className="bg-[#040810] p-3 border border-[#0D1620]">
+                <p className="text-[#3A5060] mb-1">Day 0</p>
+                <p>User disabled</p>
+              </div>
 
-      {/* STEP 6 — AOI */}
-      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
-        <h2 className="text-2xl font-semibold">
-          6. AO Integrity
-        </h2>
+              <div className="bg-[#040810] p-3 border border-[#0D1620]">
+                <p className="text-[#3A5060] mb-1">Day 3</p>
+                <p className="text-red-400">Access still valid</p>
+              </div>
 
-        <p className="text-[#B6C2CF]">
-          AO Integrity challenges authority at execution.
-        </p>
+              <div className="bg-[#040810] p-3 border border-[#0D1620]">
+                <p className="text-[#3A5060] mb-1">Day 14</p>
+                <p className="text-red-400">Execution succeeds</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <p className="text-white font-semibold">
-          Not before. Not after. At execution.
-        </p>
-      </section>
+        {/* STEP 5 */}
+        <div className="grid grid-cols-[48px_1fr] gap-x-6 py-10 border-b border-[#0D1620]">
+          <div className="flex flex-col items-center">
+            <div className="w-9 h-9 rounded-full bg-[#0A1520] border border-[#1A2830] flex items-center justify-center text-[#00C2FF] text-xs aoi-mono">
+              05
+            </div>
+            <div className="w-px bg-[#0D1620] flex-1 mt-2" />
+          </div>
 
-      {/* STEP 7 — OUTPUT */}
-      <section className="max-w-4xl mx-auto px-6 py-16 space-y-6">
-        <h2 className="text-2xl font-semibold">
-          7. What it produces
-        </h2>
+          <div>
+            <h2 className="text-lg font-bold mb-2">Why this happens</h2>
+            <p className="aoi-mono text-[12px] text-[#7A8FA0] mb-2">
+              Identity systems define access. Security systems monitor behavior.
+              Neither validates authority at execution.
+            </p>
 
-        <ul className="text-white/70 space-y-2">
-          <li>• Cross-system mismatch detection</li>
-          <li>• Authority drift identification</li>
-          <li>• Execution validation evidence</li>
-        </ul>
+            <p className="text-white font-bold border-l-2 border-[#00C2FF] pl-3">
+              No system is required to prove authority at execution.
+            </p>
+          </div>
+        </div>
+
+        {/* STEP 6 */}
+        <div className="grid grid-cols-[48px_1fr] gap-x-6 py-10 border-b border-[#0D1620]">
+          <div className="flex flex-col items-center">
+            <div className="w-9 h-9 rounded-full bg-[#0A1520] border border-[#1A2830] flex items-center justify-center text-[#00C2FF] text-xs aoi-mono">
+              06
+            </div>
+            <div className="w-px bg-[#0D1620] flex-1 mt-2" />
+          </div>
+
+          <div>
+            <h2 className="text-lg font-bold mb-2">AO Integrity</h2>
+            <p className="aoi-mono text-[12px] text-[#7A8FA0] mb-3">
+              AO Integrity challenges authority at execution.
+            </p>
+
+            <div className="bg-[#040810] border border-[#1A2830] border-t-2 border-[#00C2FF] p-4">
+              <p className="font-bold text-white mb-1">
+                Validates authority across systems at the moment execution occurs.
+              </p>
+              <p className="aoi-mono text-[11px] text-[#3A5060]">
+                Not before. Not after. At execution.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* STEP 7 */}
+        <div className="grid grid-cols-[48px_1fr] gap-x-6 py-10">
+          <div className="flex flex-col items-center">
+            <div className="w-9 h-9 rounded-full bg-[#0A1520] border border-[#1A2830] flex items-center justify-center text-[#00C2FF] text-xs aoi-mono">
+              07
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-bold mb-2">What it produces</h2>
+
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-[11px] aoi-mono text-[#7A8FA0]">
+                <div className="w-1.5 h-1.5 bg-[#00C2FF] rounded-full" />
+                Cross-system mismatch detection
+              </div>
+              <div className="flex items-center gap-2 text-[11px] aoi-mono text-[#7A8FA0]">
+                <div className="w-1.5 h-1.5 bg-[#00C2FF] rounded-full" />
+                Authority drift identification
+              </div>
+              <div className="flex items-center gap-2 text-[11px] aoi-mono text-[#7A8FA0]">
+                <div className="w-1.5 h-1.5 bg-[#00C2FF] rounded-full" />
+                Execution validation evidence
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       {/* CLOSE */}
-      <section className="max-w-4xl mx-auto px-6 py-24 text-center space-y-6">
-        <h2 className="text-3xl font-semibold">
-          Should this action still be allowed right now?
+      <section className="text-center px-6 py-20">
+        <p className="aoi-mono text-[10px] text-[#00C2FF] uppercase mb-4">
+          The only question that matters
+        </p>
+
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+          Should this action still be allowed{" "}
+          <span className="text-[#00C2FF]">right now?</span>
         </h2>
 
-        <p className="text-[#B6C2CF]">
+        <p className="aoi-mono text-[12px] text-[#3A5060] mb-6">
           If authority cannot be proven, execution must not occur.
         </p>
 
         <Link
           href="/contact"
-          className="inline-flex justify-center items-center rounded-xl bg-white text-black px-6 py-3 font-semibold hover:bg-white/90 transition"
+          className="bg-white text-black px-6 py-3 rounded font-bold text-sm"
         >
           Request Early Access
         </Link>
