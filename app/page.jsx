@@ -1,96 +1,244 @@
 import Link from "next/link";
+import PartnerStrip from "./components/PartnerStrip";
+import PillarCard from "./components/PillarCard";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#0A0F14] text-white px-6 py-12">
+    <main className="bg-[#0A0F14] text-white">
 
       {/* HERO */}
-      <section className="max-w-5xl mx-auto text-center space-y-6">
-        <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-          Authority is assumed.<br />
-          <span className="text-[#00C2FF]">
-            AO Integrity verifies it at execution.
-          </span>
-        </h1>
+      <section className="relative mx-auto max-w-6xl px-6 pt-20 pb-20">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(0,140,255,0.18),transparent_55%)]" />
 
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-          Systems say access is removed. Execution proves otherwise.
+        <p className="text-xs text-[#00C2FF] mb-4 uppercase tracking-widest">
+          A Governance Validation Layer
         </p>
 
-        <p className="text-md text-gray-400 max-w-2xl mx-auto">
-          AO Integrity produces evidence of authority drift at the moment execution occurs.
-        </p>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-6">
 
-        {/* CTA */}
-        <div className="flex justify-center gap-4 pt-4" aria-label="Primary actions">
-          <Link
-            href="/contact"
-            className="bg-[#00C2FF] text-black px-6 py-3 rounded-xl font-medium hover:opacity-90"
-          >
-            Validate Authority in Your Environment
-          </Link>
+            <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+              Authority is assumed.
+              <br />
+              AO Integrity verifies it at execution.
+            </h1>
 
-          <Link
-            href="/how-it-works"
-            className="border border-gray-600 px-6 py-3 rounded-xl hover:border-white"
-          >
-            See a Drift Scenario
-          </Link>
+            <p className="text-lg text-[#B6C2CF] leading-relaxed">
+              Systems say access is removed. Execution proves otherwise.
+              Authority is never revalidated when it matters most.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex justify-center items-center rounded-xl bg-white text-black px-5 py-3 font-semibold hover:bg-white/90 transition"
+              >
+                Request Early Access
+              </Link>
+
+              <Link
+                href="/how-it-works"
+                className="inline-flex justify-center items-center rounded-xl border border-white/20 px-5 py-3 font-semibold text-white hover:bg-white/5 transition"
+              >
+                View Execution Flow
+              </Link>
+            </div>
+
+          </div>
+
+          <div className="flex justify-center md:justify-end">
+            <img
+              src="/logo.png"
+              alt="AO Integrity Architecture"
+              className="w-[260px] md:w-[340px] drop-shadow-2xl"
+            />
+          </div>
         </div>
       </section>
 
-      {/* GAP SECTION */}
-      <section className="max-w-4xl mx-auto mt-24 space-y-10">
+      {/* GAP */}
+      <section className="max-w-5xl mx-auto px-6 py-20 space-y-6">
+        <h2 className="text-2xl md:text-3xl font-semibold">
+          Systems agree. Authority does not.
+        </h2>
 
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl font-semibold">The Gap</h2>
-
-          <p className="text-gray-400">
-            Systems define access. Systems monitor behavior.
-            <br />
-            Neither system is responsible for proving authority at execution.
-          </p>
-        </div>
-
-        {/* ORIGINAL DRIFT BLOCK */}
-        <div className="bg-[#111A23] rounded-2xl p-6 font-mono text-sm whitespace-pre-line text-gray-300">
+        <div className="bg-[#111A23] rounded-xl p-6 font-mono text-sm text-[#B6C2CF] whitespace-pre-line leading-7">
 {`User disabled in one system
 Still active in another
 Token remains valid
 
-Execution proceeds because effect is still possible without proof of authority.`}
+Execution proceeds because nothing forces it to fail.`}
         </div>
 
-        {/* NEW: EXPECTED vs ACTUAL BLOCK */}
-        <div className="bg-[#0F1720] border border-gray-700 rounded-2xl p-6 font-mono text-sm text-gray-300 space-y-4">
-          <div>
-            <span className="text-gray-500">Expected:</span>{" "}
-            <span className="text-green-400">Access revoked</span>
+        <p className="text-[#B6C2CF] leading-relaxed">
+          Identity systems define access. Security systems monitor activity.
+          Neither verifies if authority is still valid at execution.
+        </p>
+
+        <p className="text-white font-semibold">
+          No system is required to prove authority at execution.
+        </p>
+      </section>
+
+      {/* SNAPSHOT + PROOF */}
+      <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+          <h2 className="text-3xl font-semibold mb-6">
+            14 Days of Unprotected Access
+          </h2>
+
+          <div className="bg-[#111A23] border border-[#2A3A4A] rounded-xl p-5 border-l-4 border-l-[#00C2FF]">
+            <p className="text-xs text-[#00C2FF] mb-3 uppercase tracking-widest">
+              Authority Integrity Snapshot
+            </p>
+
+            <p className="font-mono text-sm text-[#B6C2CF] whitespace-pre-line leading-7">
+{`JumpCloud: Disabled
+Entra: Enabled
+
+STATE_MISMATCH → AUTHORITY_DRIFT`}
+            </p>
           </div>
 
-          <div>
-            <span className="text-gray-500">Actual:</span>{" "}
-            <span className="text-red-400">Execution still succeeds</span>
-          </div>
+          <p className="text-white font-semibold text-lg mt-6 border-l-2 border-[#00C2FF] pl-4">
+            Execution succeeded because authority was never questioned.
+          </p>
+        </div>
 
-          <div className="pt-2 text-[#00C2FF]">
-            → Authority state conflict resolved by execution, not validation
-          </div>
+        <div>
+          <img
+            src="/Images/Shot5.png"
+            alt="Cross-system mismatch detection"
+            className="rounded-xl border border-white/10 shadow-2xl"
+          />
         </div>
 
       </section>
 
-      {/* POSITIONING CLOSE */}
-      <section className="max-w-4xl mx-auto mt-24 text-center space-y-6">
-        <h3 className="text-2xl font-semibold">
-          Execution doesn’t validate authority.
-        </h3>
+      {/* DRIFT ANALYSIS */}
+      <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
 
-        <p className="text-gray-400 max-w-2xl mx-auto">
-          It resolves whatever state exists across systems.
-          <br />
-          AO Integrity verifies whether that execution should be possible at all.
+        <div>
+          <p className="text-xs text-[#00C2FF] mb-2 uppercase tracking-widest">
+            Drift Analysis
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-6">
+            Systems Don’t Agree on Reality
+          </h2>
+
+          <p className="text-[#B6C2CF] leading-relaxed mb-6">
+            Identity systems reflect different states. No system is required to reconcile them before execution.
+          </p>
+
+          <p className="text-white/50">
+            Authority is assumed from whichever system responds first.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="/Images/Shot4.png"
+            alt="Authority drift analysis"
+            className="rounded-xl border border-white/10 shadow-2xl"
+          />
+        </div>
+
+      </section>
+
+      {/* VALIDATION */}
+      <section className="max-w-5xl mx-auto px-6 py-20">
+        <p className="text-xs text-[#00C2FF] mb-2 uppercase tracking-widest">
+          Execution Validation Engine
         </p>
+
+        <h2 className="text-3xl font-semibold mb-6">
+          Validation at execution
+        </h2>
+
+        <p className="text-[#B6C2CF] leading-relaxed mb-6">
+          Authority must be proven at execution.
+          Not before. Not after. At execution.
+        </p>
+
+        <ul className="text-white/60 space-y-2">
+          <li>Cross-system mismatch</li>
+          <li>Authority drift</li>
+          <li>Orphaned identities</li>
+          <li>Offboarding failures</li>
+        </ul>
+      </section>
+
+      {/* VALIDATION PROOF */}
+      <section className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+
+        <div className="order-2 md:order-1">
+          <img
+            src="/Images/Shot6.png"
+            alt="Execution validation proof"
+            className="rounded-xl border border-white/10 shadow-2xl"
+          />
+        </div>
+
+        <div className="order-1 md:order-2">
+          <h2 className="text-3xl font-semibold mb-6">
+            Authority Must Be Proven Before Execution
+          </h2>
+
+          <p className="text-[#B6C2CF] leading-relaxed mb-6">
+            AO Integrity validates authority across systems at the moment execution occurs.
+          </p>
+
+          <p className="text-white/50">
+            If validation fails, execution should not proceed.
+          </p>
+        </div>
+
+      </section>
+
+      {/* PRINCIPLE */}
+      <section className="max-w-4xl mx-auto px-6 py-24 text-center">
+        <h2 className="text-3xl font-semibold mb-6">
+          Should this action still be allowed right now?
+        </h2>
+
+        <p className="text-[#B6C2CF] mb-4">
+          If authority cannot be proven, execution must not occur.
+        </p>
+
+        <p className="text-white/40 mb-8">
+          No system should execute on assumed authority.
+        </p>
+
+        <Link
+          href="/contact"
+          className="inline-flex justify-center items-center rounded-xl bg-white text-black px-6 py-3 font-semibold hover:bg-white/90 transition"
+        >
+          Request Early Access
+        </Link>
+      </section>
+
+      {/* PARTNERS */}
+      <PartnerStrip />
+
+      {/* PILLARS */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="grid md:grid-cols-3 gap-6">
+
+          <PillarCard title="UNIFY">
+            Normalize identity and access across systems.
+          </PillarCard>
+
+          <PillarCard title="VALIDATE">
+            Prove authority at execution, not after.
+          </PillarCard>
+
+          <PillarCard title="EVIDENCE">
+            Surface execution occurring under invalid authority.
+          </PillarCard>
+
+        </div>
       </section>
 
     </main>
