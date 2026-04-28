@@ -73,7 +73,7 @@ STATE_MISMATCH → AUTHORITY_DRIFT`}
         </div>
 
         <p className="text-white font-semibold border-l-2 border-[#00C2FF] pl-4">
-          Execution proceeds because authority was never revalidated.
+            Execution succeeded under invalid authority.
         </p>
       </section>
 
@@ -105,6 +105,7 @@ Day 14: Execution still succeeds
 
         <p className="text-white font-semibold">
           No system is required to prove authority at execution.
+          Execution resolves conflict. It does not validate authority.
         </p>
       </section>
 
@@ -115,7 +116,7 @@ Day 14: Execution still succeeds
         </h2>
 
         <p className="text-[#B6C2CF]">
-          AO Integrity verifies authority across systems at the moment execution occurs.
+          AO Integrity challenges authority at execution.
         </p>
 
         <p className="text-white font-semibold">
