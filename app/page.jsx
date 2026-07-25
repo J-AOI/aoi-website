@@ -1,253 +1,263 @@
-import Link from "next/link";
-import PartnerStrip from "./components/PartnerStrip";
-import PillarCard from "./components/PillarCard";
+import { assets } from "./data/assets";
+import { frameworks } from "./data/frameworks";
+import PageShell from "./components/layout/PageShell";
+import Section from "./components/layout/Section";
+import Button from "./components/ui/Button";
+import ProductLockup from "./components/brand/ProductLockup";
+import Eyebrow from "./components/typography/Eyebrow";
+import SectionHeading from "./components/typography/SectionHeading";
+import EvidenceCard from "./components/cards/EvidenceCard";
+import FrameworkCard from "./components/cards/FrameworkCard";
+import DashboardPreview from "./components/product/DashboardPreview";
+
+const evidenceItems = [
+  "Detect changed authority",
+  "Validate current execution state",
+  "Measure the staleness window",
+  "Produce defensible governance evidence",
+];
+
+const controlQuestions = [
+  ["Identity", "Who is acting?"],
+  ["Authentication", "Did they authenticate?"],
+  ["Authorization", "What permissions exist?"],
+  [
+    "AO Integrity",
+    "Is the authority behind this execution still legitimate right now?",
+  ],
+];
+
+const responsibilities = [
+  "Identity and access",
+  "AI governance",
+  "Security architecture",
+  "Risk and compliance",
+  "Enterprise operations",
+];
 
 export default function HomePage() {
   return (
-    <>
-
-      <div className="aoi-root bg-[#080C10] text-white">
-
-        {/* ── HERO ───────────────────────────────────────────── */}
-<section className="relative mx-auto max-w-6xl px-6 pt-20 pb-20">
-  <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(0,194,255,0.13),transparent_55%)]" />
-
-  <p className="aoi-mono text-[10px] text-[#00C2FF] uppercase tracking-[0.18em] mb-6">
-    Execution-Time Governance
-  </p>
-
-  <div className="max-w-2xl flex flex-col gap-5">
-    <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.06] tracking-tight">
-      Authority is assumed.{" "}
-      <span className="text-[#00C2FF]">AO Integrity</span> verifies it at execution.
-    </h1>
-
-    <p className="aoi-mono text-[14px] text-[#7A8FA0] leading-relaxed">
-      Systems say access is removed. Execution proves otherwise.
-      <br />
-      Authority is never revalidated when it matters most.
-    </p>
-
-    {/* 🔥 NEW SYSTEM LINE (this is the important part) */}
-    <p className="aoi-mono text-[12px] text-[#3A5060]">
-      Execution resolves conflict. It does not validate authority.
-    </p>
-
-    <p className="aoi-mono text-[12px] text-[#3A5060] border-l-2 border-[#1A2830] pl-4">
-      In most environments,{" "}
-      <span className="text-[#B6C2CF] font-medium">this is already happening.</span>
-    </p>
-
-    <div className="flex flex-col sm:flex-row gap-3 pt-2">
-      <Link
-        href="https://www.aointegrity.ai/contact"
-        className="aoi-root inline-flex justify-center items-center rounded bg-white text-black px-6 py-3 font-bold text-sm tracking-wide hover:bg-white/90 transition"
-      >
-        Request Early Access
-      </Link>
-      <Link
-        href="https://www.aointegrity.ai/how-it-works"
-        className="aoi-root inline-flex justify-center items-center rounded border border-white/20 px-6 py-3 font-semibold text-sm text-[#7A8FA0] hover:bg-white/5 transition"
-      >
-        View Execution Flow
-      </Link>
-    </div>
-  </div>
-</section>
-
-        {/* ── DIVIDER ────────────────────────────────────────── */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1E2D3A] to-transparent" />
-
-        {/* ── GAP / BREAKDOWN ────────────────────────────────── */}
-        <section className="max-w-[1100px] mx-auto px-6 py-20">
-          <p className="aoi-mono text-[10px] text-[#00C2FF] uppercase tracking-[0.18em] mb-5">
-            The Gap
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">
-            Systems agree.{" "}
-            <span className="text-[#00C2FF]">Authority does not.</span>
-          </h2>
-
-          <div className="border-l-2 border-[#1A2830] pl-6 mb-8">
-            <p className="aoi-mono text-[12px] text-[#4A6070] leading-9 whitespace-pre-line">
-{`User disabled in one system
-Still active in another
-Token remains valid
-
-Execution proceeds because nothing forces it to fail.`}
-            </p>
-          </div>
-
-          <p className="text-[14px] text-[#B6C2CF] leading-relaxed mb-4">
-            Identity systems define access. Security systems monitor activity.
-            Neither verifies if authority is still valid at execution.
-          </p>
-          <p className="text-[17px] font-bold text-white">
-            No system is required to prove authority at execution.
-          </p>
-        </section>
-
-        {/* ── DIVIDER ────────────────────────────────────────── */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1E2D3A] to-transparent" />
-
-        {/* ── 14 DAYS / SHOT 5 ───────────────────────────────── */}
-        <section className="max-w-[1100px] mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="aoi-mono text-[10px] text-[#00C2FF] uppercase tracking-[0.18em] mb-5">
-              Live Pattern
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight mb-8">
-              14 Days of Unprotected Access
-            </h2>
-
-            <div className="bg-[#0A1520] border border-[#1A2830] border-l-4 border-l-[#00C2FF] rounded-sm p-5 mb-5">
-              <p className="aoi-mono text-[10px] text-[#00C2FF] uppercase tracking-[0.16em] mb-4">
-                Authority Integrity Snapshot
+    <PageShell>
+      <main>
+        <Section className="relative overflow-hidden border-b border-white/10 pt-16 sm:pt-20 lg:pt-24">
+          <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(320px,460px)] lg:items-center">
+            <div>
+              <Eyebrow>Architecture of Integrity</Eyebrow>
+              <h1 className="mt-7 max-w-5xl text-6xl font-semibold leading-[0.96] tracking-tight text-white sm:text-7xl lg:text-8xl">
+                Authority changes. Execution continues.
+              </h1>
+              <p className="mt-8 max-w-2xl text-xl leading-8 text-white/64">
+                AO Integrity validates authority at execution and shows where operational
+                activity no longer matches approved authority.
               </p>
-              <p className="aoi-mono text-[12px] text-[#B6C2CF] leading-8 whitespace-pre-line">
-{`JumpCloud: Disabled
-Entra: Enabled
-
-STATE_MISMATCH → AUTHORITY_DRIFT`}
-              </p>
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Button href="/contact">Request Briefing</Button>
+                <Button href="/platform" variant="secondary">
+                  Explore ValidateAuthority.ai
+                </Button>
+              </div>
             </div>
 
-            <p className="text-[15px] font-bold text-white border-l-2 border-[#00C2FF] pl-4 mb-4">
-              Execution succeeded under invalid authority.
-            </p>
+            <div className="relative mx-auto flex aspect-square w-full max-w-[460px] items-center justify-center">
+              <div className="absolute inset-5 border border-aoi-red/25 bg-white/[0.015]" />
+              <div className="absolute inset-0 border border-white/10" />
+              <img
+                src={assets.framework.compass}
+                alt="AOI compass illustration"
+                className="relative z-10 w-[92%] object-contain"
+              />
+            </div>
+          </div>
+        </Section>
 
-            <div className="bg-[rgba(0,194,255,0.04)] border border-[rgba(0,194,255,0.1)] rounded p-4">
-              <p className="aoi-mono text-[11px] text-[#7A8FA0] leading-relaxed">
-                <span className="text-[#E8ECF0] font-medium">This is not an edge case.</span>{" "}
-                This is what happens when execution is never revalidated.
+        <Section className="border-b border-white/10 bg-[#050505]">
+          <div className="grid gap-10 lg:grid-cols-[1fr_360px] lg:items-end">
+            <SectionHeading title="Systems of record are not systems of execution.">
+              Access can change in one system while execution remains active in another.
+            </SectionHeading>
+            <div className="flex min-h-[180px] items-end border border-aoi-red/35 bg-aoi-red/[0.08] p-7">
+              <p className="text-3xl font-semibold tracking-tight text-aoi-red">
+                Authority Drift
               </p>
             </div>
           </div>
+        </Section>
 
-          <div>
-            <img
-              src="/Images/Shot5.png"
-              alt="Mismatch detection"
-              className="rounded-lg border border-white/10 shadow-2xl brightness-110 w-full"
-            />
+        <Section className="border-b border-white/10">
+          <SectionHeading title="Every enterprise already answers these questions." />
+          <div className="mt-12 grid gap-px overflow-hidden border border-white/12 bg-white/12 lg:grid-cols-4">
+            {controlQuestions.map(([label, question], index) => {
+              const isAoi = label === "AO Integrity";
+
+              return (
+                <article
+                  key={label}
+                  className={`min-h-[250px] p-6 sm:p-7 ${
+                    isAoi
+                      ? "border border-aoi-red bg-aoi-red/[0.12] text-white"
+                      : "bg-aoi-black text-white"
+                  }`}
+                >
+                  <p
+                    className={`text-xs font-semibold uppercase tracking-[0.22em] ${
+                      isAoi ? "text-aoi-red" : "text-white/44"
+                    }`}
+                  >
+                    {label}
+                  </p>
+                  <p className="mt-10 text-2xl font-semibold leading-tight tracking-tight">
+                    {question}
+                  </p>
+                  <p className="mt-8 text-xs font-semibold tracking-[0.2em] text-white/40">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                </article>
+              );
+            })}
           </div>
-        </section>
+          <p className="mt-8 max-w-3xl text-base leading-7 text-white/58">
+            AO Integrity complements existing identity, authentication, and authorization
+            investments by validating authority at execution.
+          </p>
+        </Section>
 
-        {/* ── DRIFT / SHOT 4 ─────────────────────────────────── */}
-        <section className="max-w-[1100px] mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="aoi-mono text-[10px] text-[#00C2FF] uppercase tracking-[0.18em] mb-5">
-              Drift Analysis
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight mb-6">
-              Systems Don't Agree on Reality
-            </h2>
-            <p className="text-[14px] text-[#B6C2CF] leading-relaxed mb-4">
-              Identity systems reflect different states.
-              No system is required to reconcile them before execution.
-            </p>
-            <p className="aoi-mono text-[12px] text-[#3A5060]">
-              Execution resolves conflict. It does not validate authority.
-            </p>
+        <Section className="border-b border-white/10 bg-[#050505]">
+          <SectionHeading title="AO Integrity validates execution-time authority.">
+            AOI detects changed authority, checks current execution state, measures staleness,
+            and produces governance evidence.
+          </SectionHeading>
+        </Section>
+
+        <Section className="border-b border-white/10">
+          <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <Eyebrow>Operational Platform</Eyebrow>
+              <div className="mt-6">
+                <ProductLockup className="h-auto w-full max-w-[430px]" />
+              </div>
+              <h2 className="mt-10 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
+                Operational validation for authority drift.
+              </h2>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-white/62">
+                ValidateAuthority.ai turns changed authority and active execution into
+                reviewable evidence.
+              </p>
+              <Button href="/platform" variant="secondary" className="mt-9">
+                View Platform
+              </Button>
+            </div>
+            <div className="flex min-h-[360px] items-center justify-center border border-white/12 bg-white/[0.025] p-8">
+              <img
+                src={assets.product.monogram}
+                alt="ValidateAuthority.ai product mark"
+                className="h-52 w-52 object-contain sm:h-60 sm:w-60"
+              />
+            </div>
           </div>
+        </Section>
 
-          <div>
-            <img
-              src="/Images/Shot4.png"
-              alt="Drift analysis"
-              className="rounded-lg border border-white/10 shadow-2xl brightness-110 w-full"
-            />
+        <Section className="border-b border-white/10 bg-[#050505]">
+          <SectionHeading
+            eyebrow="Evidence"
+            title="Evidence for the questions governance teams must answer."
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {evidenceItems.map((item, index) => (
+              <EvidenceCard key={item} index={index + 1} title={item} />
+            ))}
           </div>
-        </section>
+        </Section>
 
-        {/* ── DIVIDER ────────────────────────────────────────── */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1E2D3A] to-transparent" />
-
-        {/* ── VALIDATION ENGINE ──────────────────────────────── */}
-        <section className="max-w-[1100px] mx-auto px-6 py-20">
-          <p className="aoi-mono text-[10px] text-[#00C2FF] uppercase tracking-[0.18em] mb-5">
-            Execution Validation Engine
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight mb-6">
-            Validation at execution
-          </h2>
-          <p className="text-[14px] text-[#B6C2CF] leading-relaxed mb-8 max-w-xl">
-            Authority must be proven at execution.{" "}
-            <span className="text-white font-semibold">
-              Not before. Not after. At execution.
-            </span>
-          </p>
-
-
-        </section>
-
-        {/* ── PROOF / SHOT 6 ─────────────────────────────────── */}
-        <section className="max-w-[1100px] mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1">
-            <img
-              src="/Images/Shot6.png"
-              alt="Execution validation"
-              className="rounded-lg border border-white/10 shadow-2xl brightness-110 w-full"
-            />
-          </div>
-          <div className="order-1 md:order-2">
-            <h2 className="text-3xl font-bold tracking-tight mb-6">
-              Authority Must Be Proven at Execution
-            </h2>
-            <p className="text-[14px] text-[#B6C2CF] leading-relaxed mb-4">
-              AoI validates authority across systems at the moment execution occurs.
-            </p>
-            <p className="aoi-mono text-[12px] text-[#3A5060]">
-              If validation fails, execution does not proceed.
-            </p>
-          </div>
-        </section>
-
-        {/* ── DIVIDER ────────────────────────────────────────── */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1E2D3A] to-transparent" />
-
-        {/* ── CLOSING QUESTION ───────────────────────────────── */}
-        <section className="max-w-[1100px] mx-auto px-6 py-28 text-center">
-          <p className="aoi-mono text-[10px] text-[#00C2FF] uppercase tracking-[0.18em] mb-6">
-            The only question that matters
-          </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
-            Should this action still be allowed{" "}
-            <span className="text-[#00C2FF]">right now?</span>
-          </h2>
-          <p className="text-[14px] text-[#B6C2CF] mb-3">
-            If authority cannot be proven, execution must not occur.
-          </p>
-          <p className="aoi-mono text-[12px] text-[#3A5060] mb-10">
-            No system should execute on assumed authority.
-          </p>
-          <Link
-            href="https://www.aointegrity.ai/contact"
-            className="aoi-root inline-flex justify-center items-center rounded bg-white text-black px-8 py-4 font-bold text-sm tracking-wide hover:bg-white/90 transition"
+        <Section className="border-b border-white/10">
+          <SectionHeading
+            eyebrow="Product Preview"
+            title="Authority and execution in one review surface."
           >
-            Request Early Access
-          </Link>
-        </section>
-
-        {/* ── PARTNER STRIP ──────────────────────────────────── */}
-        <PartnerStrip />
-
-        {/* ── PILLARS ────────────────────────────────────────── */}
-        <section className="mx-auto max-w-6xl px-6 py-16">
-          <div className="grid md:grid-cols-3 gap-px bg-[#0D1620] rounded overflow-hidden border border-[#0D1620]">
-            <PillarCard title="UNIFY">
-              Normalize identity and access across systems.
-            </PillarCard>
-            <PillarCard title="VALIDATE">
-              Prove authority at execution, not after.
-            </PillarCard>
-            <PillarCard title="EVIDENCE">
-              Surface execution occurring under invalid authority.
-            </PillarCard>
+            Review changed authority, active execution, staleness, and governance evidence
+            from one operational view.
+          </SectionHeading>
+          <div className="mt-12 lg:mt-14">
+            <DashboardPreview />
           </div>
-        </section>
+        </Section>
 
-      </div>
-    </>
+        <Section className="border-b border-white/10 bg-[#050505]">
+          <SectionHeading
+            eyebrow="Why Now"
+            title="Execution is expanding faster than governance."
+          >
+            Organizations are increasing execution faster than they are increasing governance.
+            Identity systems, cloud services, AI-enabled operations, and enterprise workflows
+            now move faster than traditional review cycles.
+          </SectionHeading>
+          <p className="mt-10 max-w-4xl border-l border-aoi-red pl-6 text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl">
+            When execution outlives authority, risk becomes operational before it becomes visible.
+          </p>
+        </Section>
+
+        <Section className="border-b border-white/10">
+          <SectionHeading
+            eyebrow="Operational Ownership"
+            title="Built for teams accountable for execution risk."
+          />
+          <div className="mt-12 grid gap-px overflow-hidden border border-white/12 bg-white/12 sm:grid-cols-2 lg:grid-cols-5">
+            {responsibilities.map((item) => (
+              <div key={item} className="bg-aoi-black p-6">
+                <p className="text-lg font-semibold leading-tight text-white">{item}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section className="border-b border-white/10 bg-[#050505]">
+          <SectionHeading
+            eyebrow="Frameworks"
+            title="Runtime Governance begins with authority drift."
+          >
+            AOI's Runtime Governance Blueprint organizes authority drift, staleness,
+            execution state, and governance evidence.
+          </SectionHeading>
+          <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_0.7fr]">
+            {frameworks.map((framework) => (
+              <FrameworkCard
+                key={framework.href}
+                title={framework.title}
+                description={framework.description}
+                href={framework.href}
+                imageSrc={assets.framework.runtimeCore}
+                imageAlt="AOI Runtime Core symbol"
+              />
+            ))}
+            <div className="grid gap-px overflow-hidden border border-white/12 bg-white/12">
+              {[
+                ["Runtime Governance Blueprint", "framework"],
+                ["Authority Drift", "risk condition"],
+                ["Runtime Core", "framework symbol"],
+                ["Compass", "narrative illustration"],
+              ].map(([label, value]) => (
+                <div key={label} className="grid grid-cols-[1fr_auto] gap-6 bg-aoi-black p-5">
+                  <p className="text-sm font-semibold text-white">{label}</p>
+                  <p className="text-right text-sm text-white/52">{value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Section>
+
+        <Section className="bg-[#050505]">
+          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+            <SectionHeading
+              eyebrow="Briefing"
+              title="Find where authority and execution no longer agree."
+            >
+              Request an AOI briefing on execution-time authority validation.
+            </SectionHeading>
+            <Button href="/contact" className="lg:mb-1">
+              Request Briefing
+            </Button>
+          </div>
+        </Section>
+      </main>
+    </PageShell>
   );
 }
