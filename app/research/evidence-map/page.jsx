@@ -6,11 +6,11 @@ import Button from "../../components/ui/Button";
 import ClaimMap from "./ClaimMap";
 import corpus from "../../../content/data/runtime-governance-evidence.json";
 
-const EXPECTED_SCHEMA_VERSION = 6;
+const SUPPORTED_SCHEMA_VERSION = 7;
 
-if (corpus.schema_version !== EXPECTED_SCHEMA_VERSION) {
+if (corpus.schema_version !== SUPPORTED_SCHEMA_VERSION) {
   throw new Error(
-    `Unsupported Runtime Governance evidence schema: expected ${EXPECTED_SCHEMA_VERSION}, received ${corpus.schema_version}`,
+    `Unsupported Runtime Governance evidence schema: expected ${SUPPORTED_SCHEMA_VERSION}, received ${corpus.schema_version}`,
   );
 }
 
