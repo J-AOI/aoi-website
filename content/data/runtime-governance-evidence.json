@@ -2,7 +2,7 @@
   "thesis": "The Runtime Governance Thesis",
   "thesis_version": "v0.9",
   "maintainer": "AO Integrity Research",
-  "schema_version": 6,
+  "schema_version": 7,
   "conditions": {
     "3.1": "Authority Validity",
     "3.2": "Authority Provenance",
@@ -48,6 +48,10 @@
     {
       "run_date": "2026-07-29",
       "note": "Schema v6. Added withdrawn/withdrawn_reason fields, explicit id_policy, and field_notes for downstream consumers. Plumbing only."
+    },
+    {
+      "run_date": "2026-07-29",
+      "note": "Schema v7. Seven notes rewritten descriptively; internal workflow references, deployment guidance, and forward-looking assessments removed."
     }
   ],
   "entries": [
@@ -118,7 +122,7 @@
         "EV"
       ],
       "threat_flag": "naming_collision",
-      "note": "Benchmark accompanying DEMM. Uses 'agent-runtime governance-evidence' as a compound term. Evidence sufficiency is becoming measurable, which is useful for Section 6.6 metrics but crowds the evidentiary contribution.",
+      "note": "Benchmark accompanying the Decision Evidence Maturity Model. Uses 'agent-runtime governance-evidence' as a compound term. Provides executable categories for classifying evidence sufficiency, making the property measurable rather than asserted. Bears on GE and on the metrics discussion in Section 6.6.",
       "domain": "Evidence",
       "claims": [
         "GE"
@@ -199,7 +203,7 @@
         "EV"
       ],
       "threat_flag": "absorption",
-      "note": "Individual Internet-Draft binding intent to admission control and audit at tool invocation. Same evaluation moment the thesis claims. Watch for working-group adoption.",
+      "note": "Individual Internet-Draft binding declared intent to admission control and audit at the point of tool invocation. Not a working group document as of cataloging. Addresses the same evaluation moment as Runtime Admissibility. Bears on condition 3.4 and on GE.",
       "domain": "Policy",
       "claims": [
         "EL",
@@ -308,7 +312,7 @@
         "3.2"
       ],
       "threat_flag": "none",
-      "note": "Already cited in Appendix D. Confirmed live and consistent with the delegation-propagation framing.",
+      "note": "Examines how authorization propagates across multi-agent systems and frames identity governance as infrastructure rather than policy. Consistent with the delegation-propagation reading in Appendix A. Cited in the thesis reference list. Bears on AC and condition 3.2.",
       "domain": "Identity",
       "claims": [
         "AC"
@@ -470,7 +474,7 @@
         "3.1"
       ],
       "threat_flag": "none",
-      "note": "NHI-to-human ratios reported between 45:1 and 144:1 depending on environment; 73 percent of NHI-held secrets carry excessive permissions; 92 percent of organizations say current IAM tools cannot manage AI agent identities. Market-conditions evidence, useful for LinkedIn framing rather than as a load-bearing citation.",
+      "note": "Reports non-human identity to human ratios between 45:1 and 144:1 depending on environment, 73 percent of NHI-held secrets carrying excessive permissions, over 5.5 percent of AWS machine identities holding full administrative privilege, and 92 percent of organizations stating current IAM tooling cannot manage AI agent identities. Aggregated vendor and analyst reporting rather than peer-reviewed measurement. Bears on MKT and, indirectly, condition 3.1.",
       "domain": "Market",
       "claims": [
         "MKT",
@@ -621,7 +625,7 @@
       "relation": "supports",
       "strength": "supporting",
       "threat_flag": "none",
-      "note": "Supplied by Justin. Frames the gap between governance as described in policy and governance as operationally established. Directly supports Section 3.8's distinction between security correctness and governance legitimacy, and the Section 4.4 observation that the common failure is describing an E0 control as fully audited.",
+      "note": "Frames the gap between governance as described in policy and governance as operationally established in the execution path. Bears on Section 3.8's distinction between security correctness and governance legitimacy, and on the Section 4.4 observation that controls are often described as audited at assurance levels they do not meet.",
       "suggested_by": "AOI",
       "added_reason": "",
       "withdrawn": false,
@@ -760,7 +764,7 @@
       "relation": "supports",
       "strength": "foundational",
       "threat_flag": "none",
-      "note": "Synthesizes runtime monitors from provably safe hybrid system models, robust to partial observability from sensor uncertainty and partial controllability from actuator disturbance. The partial-observability treatment is the formal analogue of Section 6.1's admission that contextual validity often proceeds on cached state \u2014 this literature already reasons about what guarantee survives when the monitor cannot see everything. Directly useful for making signal freshness a bounded guarantee rather than a caveat.",
+      "note": "Synthesizes runtime monitors from provably safe hybrid system models, robust to partial observability arising from sensor uncertainty and partial controllability arising from actuator disturbance. Establishes what guarantee survives when a monitor cannot observe full system state. The partial-observability treatment corresponds to the Section 6.1 assumption that contextual validity may proceed on cached state, and to the signal-freshness requirement in Section 4.2.",
       "suggested_by": "AOI",
       "added_reason": "",
       "withdrawn": false,
@@ -816,7 +820,7 @@
       "relation": "differentiates",
       "strength": "emerging",
       "threat_flag": "absorption",
-      "note": "Security hypothesis, preliminary formal model, and proof-of-concept for cryptographically verifiable agent authorization. Watch: if verifiable authorization matures, condition 3.2 moves fully into the covered column and the thesis narrows to 3.3-3.5.",
+      "note": "Security hypothesis, preliminary formal model, and proof-of-concept implementation for cryptographically verifiable authorization of autonomous agents. Early-stage single-source work. Bears on condition 3.2 and on GE.",
       "suggested_by": "AOI",
       "added_reason": "",
       "withdrawn": false,
