@@ -195,29 +195,31 @@ export default function HomePage() {
           </p>
         </Section>
 
-        <Section className="border-b border-white/10">
+        <Section spacing="compact" className="border-b border-white/10">
           <SectionHeading
             eyebrow="Operational Ownership"
             title="Built for teams accountable for execution risk."
+            size="compact"
           />
-          <div className="mt-12 grid gap-px overflow-hidden border border-white/12 bg-white/12 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-10 grid gap-px overflow-hidden border border-white/12 bg-white/12 sm:grid-cols-2 lg:grid-cols-5">
             {responsibilities.map((item) => (
-              <div key={item} className="bg-aoi-black p-6">
+              <div key={item} className="bg-aoi-black p-5 sm:p-6">
                 <p className="text-lg font-semibold leading-tight text-white">{item}</p>
               </div>
             ))}
           </div>
         </Section>
 
-        <Section className="border-b border-white/10 bg-[#050505]">
+        <Section spacing="compact" className="border-b border-white/10 bg-[#050505]">
           <SectionHeading
             eyebrow="Frameworks"
             title="Runtime Governance begins with authority drift."
+            size="compact"
           >
             AOI's Runtime Governance Blueprint organizes authority drift, staleness,
             execution state, and governance evidence.
           </SectionHeading>
-          <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_0.7fr]">
+          <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_0.7fr]">
             {frameworks.map((framework) => (
               <FrameworkCard
                 key={framework.href}
@@ -244,11 +246,12 @@ export default function HomePage() {
           </div>
         </Section>
 
-        <Section className="bg-[#050505]">
+        <Section spacing="tight" className="bg-[#050505]">
           <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
             <SectionHeading
               eyebrow="Briefing"
               title="Find where authority and execution no longer agree."
+              size="compact"
             >
               Request an AOI briefing on execution-time authority validation.
             </SectionHeading>

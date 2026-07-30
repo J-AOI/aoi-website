@@ -1,7 +1,12 @@
 export const navigation = [
-  { label: "Platform", href: "/platform" },
+  { label: "Runtime Governance", href: "/runtime-governance" },
+  { label: "Research", href: "/research" },
   { label: "Frameworks", href: "/frameworks" },
-  { label: "Insights", href: "/insights" },
+  { label: "Platform", href: "/platform" },
   { label: "Company", href: "/company" },
+];
+
+export const footerNavigation = [
+  ...navigation,
   { label: "Contact", href: "/contact" },
 ];

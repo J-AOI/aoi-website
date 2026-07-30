@@ -1,6 +1,6 @@
 import Link from "next/link";
 import BrandMark from "../brand/BrandMark";
-import { navigation } from "../../data/navigation";
+import { footerNavigation } from "../../data/navigation";
 
 export default function SiteFooter() {
   return (
@@ -13,7 +13,7 @@ export default function SiteFooter() {
           </p>
         </div>
         <nav className="grid grid-cols-2 gap-x-10 gap-y-4 sm:flex sm:items-start sm:gap-8">
-          {navigation.map((item) => (
+          {footerNavigation.map((item) => (
             <Link key={item.href} href={item.href} className="text-sm text-white/62 hover:text-white">
               {item.label}
             </Link>

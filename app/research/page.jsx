@@ -1,6 +1,7 @@
 import PageShell from "../components/layout/PageShell";
 import Section from "../components/layout/Section";
 import Eyebrow from "../components/typography/Eyebrow";
+import Button from "../components/ui/Button";
 import CategorySection from "../components/insights/CategorySection";
 import {
   getInsightsByCategory,
@@ -8,7 +9,7 @@ import {
   insightLibraryStats,
 } from "../data/insights";
 
-export default function InsightsPage() {
+export default function ResearchPage() {
   return (
     <PageShell>
       <main>
@@ -23,6 +24,11 @@ export default function InsightsPage() {
                 Independent observations, market signals, framework commentary,
                 executive briefs, and long-form analysis organized for discovery.
               </p>
+              <div className="mt-8">
+                <Button href="/research/evidence-map" variant="secondary">
+                  Open Evidence Map
+                </Button>
+              </div>
             </div>
 
             <div className="border border-white/12 bg-white/[0.025]">

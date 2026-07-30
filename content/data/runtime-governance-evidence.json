@@ -1,0 +1,1187 @@
+{
+  "thesis": "The Runtime Governance Thesis",
+  "thesis_version": "v0.9",
+  "maintainer": "AO Integrity Research",
+  "schema_version": 6,
+  "conditions": {
+    "3.1": "Authority Validity",
+    "3.2": "Authority Provenance",
+    "3.3": "Contextual Validity",
+    "3.4": "Intent Conformance",
+    "3.5": "Causal Integrity",
+    "EV": "Governance Evidence / assurance levels",
+    "OBJ": "Evaluation object / execution as boundary",
+    "MKT": "Market and adoption conditions"
+  },
+  "stances": {
+    "supports": "Corroborates a claim the thesis makes",
+    "contests": "Argues against a claim, or shows an existing discipline already covers it",
+    "complicates": "Neither confirms nor refutes; narrows, qualifies, or moves the boundary"
+  },
+  "threat_flags": {
+    "none": "No overlap concern",
+    "prior_art": "Makes a substantially similar argument that predates or parallels the thesis",
+    "naming_collision": "Uses the term Runtime Governance or a near-equivalent for a different or overlapping object",
+    "absorption": "Standards or research work that may absorb a condition into an existing discipline"
+  },
+  "runs": [
+    {
+      "run_date": "2026-07-27",
+      "note": "Seed corpus. Initial scoping sweep across six claim areas."
+    },
+    {
+      "run_date": "2026-07-27",
+      "note": "Schema v2. Widened beyond security into legal doctrine, formal methods, ops doctrine, and distributed systems. Two significant prior-art collisions surfaced (PoE, institutional attestation)."
+    },
+    {
+      "run_date": "2026-07-27",
+      "note": "Schema v3. Canonical claim definitions applied; five retag corrections; positioning block added. Search for FlowSignal surfaced four further Runtime Admissibility collisions (AgentBound, Reconstructive Authority x2, FlexRule)."
+    },
+    {
+      "run_date": "2026-07-27",
+      "note": "Schema v4. Editorial content removed: positioning block dropped, prescriptive gap text replaced with descriptive coverage statements, recommendation language stripped from fifteen notes. Corpus returned to catalog role."
+    },
+    {
+      "run_date": "2026-07-28",
+      "note": "Schema v5. Added suggested_by and added_reason provenance fields; stable citation anchors per entry. Plumbing only, no entries changed."
+    },
+    {
+      "run_date": "2026-07-29",
+      "note": "Schema v6. Added withdrawn/withdrawn_reason fields, explicit id_policy, and field_notes for downstream consumers. Plumbing only."
+    }
+  ],
+  "entries": [
+    {
+      "id": "e001",
+      "added": "2026-07-27",
+      "title": "Runtime Governance for AI Agents: Policies on Paths",
+      "url": "https://arxiv.org/abs/2603.16586",
+      "source": "arXiv 2603.16586",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-03-17",
+      "stance": "complicates",
+      "conditions": [
+        "OBJ"
+      ],
+      "threat_flag": "prior_art",
+      "note": "Argues the execution path is the central object for runtime governance and formalizes compliance policy as a deterministic function mapping agent identity, partial path, proposed next action, and organizational state to a violation probability. Claims prompt-level instructions and static access control are special cases of this framework. Policy examples drawn from the AI Act; reference implementation discussed. Bears on OBJ and RA.",
+      "domain": "Runtime",
+      "claims": [
+        "OBJ",
+        "RA"
+      ],
+      "relation": "differentiates",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e002",
+      "added": "2026-07-27",
+      "title": "Decision Evidence Maturity Model for Agentic AI: A Property-Level Method Specification",
+      "url": "https://arxiv.org/abs/2605.04093",
+      "source": "arXiv 2605.04093",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-05",
+      "stance": "complicates",
+      "conditions": [
+        "EV"
+      ],
+      "threat_flag": "prior_art",
+      "note": "Five-level evidence sufficiency rubric plus the named 'container fallacy' \u2014 equating evidence-container presence with audit sufficiency. Directly parallels the E0-E4 scale and the Section 4.4 warning about describing an E0 control as fully audited.",
+      "domain": "Evidence",
+      "claims": [
+        "GE"
+      ],
+      "relation": "differentiates",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e003",
+      "added": "2026-07-27",
+      "title": "DEMM-Bench: A Cross-Regime Benchmark for Agent-Runtime Governance-Evidence Sufficiency",
+      "url": "https://arxiv.org/pdf/2606.20634",
+      "source": "arXiv 2606.20634",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-06",
+      "stance": "complicates",
+      "conditions": [
+        "EV"
+      ],
+      "threat_flag": "naming_collision",
+      "note": "Benchmark accompanying DEMM. Uses 'agent-runtime governance-evidence' as a compound term. Evidence sufficiency is becoming measurable, which is useful for Section 6.6 metrics but crowds the evidentiary contribution.",
+      "domain": "Evidence",
+      "claims": [
+        "GE"
+      ],
+      "relation": "complements",
+      "strength": "emerging",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e004",
+      "added": "2026-07-27",
+      "title": "Agent Control Specification: Portable runtime governance for AI Agents",
+      "url": "https://commandline.microsoft.com/agent-control-specification-runtime-governance/",
+      "source": "Microsoft",
+      "tier": 2,
+      "type": "vendor",
+      "published": "2026",
+      "stance": "contests",
+      "conditions": [
+        "OBJ",
+        "MKT"
+      ],
+      "threat_flag": "naming_collision",
+      "note": "Markets 'runtime governance' as a vendor-neutral standard for applying governance across the agent lifecycle. Uses the term for a policy-enforcement layer, not an evaluation object. Section 5.5 argues the discipline does not require a platform; this is the term being used to name a platform.",
+      "domain": "Runtime",
+      "claims": [
+        "OBJ",
+        "MKT"
+      ],
+      "relation": "differentiates",
+      "strength": "emerging",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e005",
+      "added": "2026-07-27",
+      "title": "Intent-Governed Tool Authorization for AI Agents",
+      "url": "https://arxiv.org/html/2606.22916",
+      "source": "arXiv 2606.22916",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-06",
+      "stance": "complicates",
+      "conditions": [
+        "3.4"
+      ],
+      "threat_flag": "absorption",
+      "note": "Argues a tool call can be authorized by static credentials and still be unjustified by the user's current request \u2014 export authority should not be exposed when a bounded summary was asked for. This is Intent Conformance being attacked directly. Contradicts the Appendix A claim that intent conformance remains outside the stated scope of current proposals.",
+      "domain": "Policy",
+      "claims": [
+        "EL"
+      ],
+      "relation": "differentiates",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e006",
+      "added": "2026-07-27",
+      "title": "Verifiable Agent Protocol (VAP): Intent-Bound Admission Control and Audit for Agent Tool Invocation",
+      "url": "https://datatracker.ietf.org/doc/html/draft-samal-vap-00",
+      "source": "IETF draft-samal-vap-00",
+      "tier": 1,
+      "type": "standard",
+      "published": "2026",
+      "stance": "complicates",
+      "conditions": [
+        "3.4",
+        "EV"
+      ],
+      "threat_flag": "absorption",
+      "note": "Individual Internet-Draft binding intent to admission control and audit at tool invocation. Same evaluation moment the thesis claims. Watch for working-group adoption.",
+      "domain": "Policy",
+      "claims": [
+        "EL",
+        "GE"
+      ],
+      "relation": "differentiates",
+      "strength": "emerging",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e007",
+      "added": "2026-07-27",
+      "title": "OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts",
+      "url": "https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/",
+      "source": "OpenID Foundation",
+      "tier": 1,
+      "type": "standard",
+      "published": "2026",
+      "stance": "supports",
+      "conditions": [
+        "3.2",
+        "3.4"
+      ],
+      "threat_flag": "absorption",
+      "note": "AuthZEN Final in January 2026. New AARP draft addresses what happens when policy cannot authorize yet because a prerequisite \u2014 approval, consent, delegated authority, attestation, risk assessment, or justification \u2014 must first be satisfied. Supports the claim that the gap is upstream of the decision point; also shows the gap being actively closed.",
+      "domain": "Identity",
+      "claims": [
+        "AC",
+        "EL"
+      ],
+      "relation": "complements",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e008",
+      "added": "2026-07-27",
+      "title": "Prompt injection still drives most agentic AI security failures in production",
+      "url": "https://www.helpnetsecurity.com/2026/06/11/owasp-prompt-injection-ai-security-failures/",
+      "source": "Help Net Security / OWASP",
+      "tier": 2,
+      "type": "press",
+      "published": "2026-06-11",
+      "stance": "supports",
+      "conditions": [
+        "3.5"
+      ],
+      "threat_flag": "none",
+      "note": "OWASP-sourced. Prompt injection lands on roughly one in three deployed agents; 88 percent of enterprises deploying agents reported at least one agent-linked security incident. Direct empirical support for Causal Integrity as a live failure mode rather than a hypothetical.",
+      "domain": "Runtime",
+      "claims": [
+        "EL"
+      ],
+      "relation": "supports",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e009",
+      "added": "2026-07-27",
+      "title": "awesome-ai-agent-attacks \u2014 sourced timeline of real AI agent security incidents 2024-2026",
+      "url": "https://github.com/webpro255/awesome-ai-agent-attacks",
+      "source": "Community timeline",
+      "tier": 1,
+      "type": "incident",
+      "published": "2026",
+      "stance": "supports",
+      "conditions": [
+        "3.5",
+        "3.2"
+      ],
+      "threat_flag": "none",
+      "note": "Dated and sourced incident corpus. Includes the Copilot email-summarization case (hidden instructions ingested during summarization, exfiltration from OneDrive/SharePoint/Teams via a trusted Microsoft domain), CVE-2025-6514 MCP RCE, CVE-2025-59536 hooks injection, postmark-mcp supply chain, and GTG-1002. The Copilot case is a close real-world analogue of Appendix C.1.",
+      "domain": "Runtime",
+      "claims": [
+        "EL",
+        "AC"
+      ],
+      "relation": "supports",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e010",
+      "added": "2026-07-27",
+      "title": "Authorization Propagation in Multi-Agent AI Systems: Identity Governance as Infrastructure",
+      "url": "https://arxiv.org/abs/2605.05440",
+      "source": "arXiv 2605.05440 (Tallam)",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-05",
+      "stance": "supports",
+      "conditions": [
+        "3.2"
+      ],
+      "threat_flag": "none",
+      "note": "Already cited in Appendix D. Confirmed live and consistent with the delegation-propagation framing.",
+      "domain": "Identity",
+      "claims": [
+        "AC"
+      ],
+      "relation": "supports",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e011",
+      "added": "2026-07-27",
+      "title": "AI Identity: Standards, Gaps, and Directions",
+      "url": "https://arxiv.org/pdf/2604.23280",
+      "source": "arXiv 2604.23280",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-04-28",
+      "stance": "supports",
+      "conditions": [
+        "3.2"
+      ],
+      "threat_flag": "none",
+      "note": "Finds OAuth 2.0 handles one-hop delegation well but lacks multi-hop chaining, cross-domain asynchronous flows, and any mapping between OAuth scopes and agent capabilities; cross-organizational log correlation unsolved. Independent corroboration of the Appendix A reading of RFC 8693 and RFC 9396.",
+      "domain": "Identity",
+      "claims": [
+        "AC"
+      ],
+      "relation": "supports",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e012",
+      "added": "2026-07-27",
+      "title": "OpenID Connect Agent Identity Claims for Autonomous AI Agents",
+      "url": "https://datatracker.ietf.org/doc/draft-sharif-openid-agent-identity/00/",
+      "source": "IETF draft-sharif-openid-agent-identity-00",
+      "tier": 1,
+      "type": "standard",
+      "published": "2026-03-26",
+      "stance": "complicates",
+      "conditions": [
+        "3.1",
+        "3.2"
+      ],
+      "threat_flag": "absorption",
+      "note": "Profile of OIDC Core enabling IdPs to issue identity tokens for autonomous agents. Strengthens coverage of conditions 3.1 and 3.2, narrowing the thesis to 3.3-3.5 as intended by Section 3.7.",
+      "domain": "Identity",
+      "claims": [
+        "AC"
+      ],
+      "relation": "complements",
+      "strength": "emerging",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e013",
+      "added": "2026-07-27",
+      "title": "EU AI Act Article 12 logging obligations reach full enforcement August 2, 2026",
+      "url": "https://salt.security/eu-ai-act-compliance",
+      "source": "Salt Security / EU AI Act",
+      "tier": 2,
+      "type": "regulatory",
+      "published": "2026",
+      "stance": "supports",
+      "conditions": [
+        "EV",
+        "MKT"
+      ],
+      "threat_flag": "none",
+      "note": "Article 12 mandates automatic logging of events relevant to traceability; logs must be tamper-evident, retained six months minimum. No finalized technical standard yet \u2014 prEN 18229-1 and ISO/IEC DIS 24970 still in draft. Demand-side support for the decision receipt and for stating an assurance level explicitly.",
+      "domain": "Regulatory",
+      "claims": [
+        "GE",
+        "MKT"
+      ],
+      "relation": "supports",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e014",
+      "added": "2026-07-27",
+      "title": "Okta transmits only two outbound CAEP event types as of early 2026",
+      "url": "https://andrewdoering.org/blog/2026/authzen-shared-signals-framework-part-2-okta/",
+      "source": "Andrew Doering",
+      "tier": 2,
+      "type": "practitioner",
+      "published": "2026",
+      "stance": "supports",
+      "conditions": [
+        "3.3"
+      ],
+      "threat_flag": "none",
+      "note": "Okta does not emit risk-level-change, device-compliance-change, or assurance-level-change outbound. Sharpens the Appendix A argument that expressibility is not standardization \u2014 the deployed vocabulary is narrower than the specified one, well before reaching matter closure or contract expiry.",
+      "domain": "Identity",
+      "claims": [
+        "AD"
+      ],
+      "relation": "supports",
+      "strength": "emerging",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e015",
+      "added": "2026-07-27",
+      "title": "Compositional agent harm \u2014 individually authorized sub-actions yielding harmful sequences",
+      "url": "https://arxiv.org/html/2604.23338v2",
+      "source": "arXiv 2604.23338",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-04",
+      "stance": "supports",
+      "conditions": [
+        "3.4",
+        "3.2"
+      ],
+      "threat_flag": "none",
+      "note": "Systematic survey establishing that multi-step chains compose individually benign invocations into harmful sequences, and that the security property of a composition cannot be derived from its steps. Stateless per-request engines cannot enforce properties depending on execution history. Direct support for Appendix C.4.",
+      "domain": "Runtime",
+      "claims": [
+        "EL",
+        "AC"
+      ],
+      "relation": "supports",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e016",
+      "added": "2026-07-27",
+      "title": "GitGuardian / Veza \u2014 non-human identity sprawl and over-permissioning at scale",
+      "url": "https://securityboulevard.com/2026/07/the-agent-identity-problem-non-human-identities-outnumber-humans-45-to-1-and-ai-agents-are-making-it-worse/",
+      "source": "Security Boulevard / GitGuardian / Veza",
+      "tier": 2,
+      "type": "analyst",
+      "published": "2026-07",
+      "stance": "supports",
+      "conditions": [
+        "MKT",
+        "3.1"
+      ],
+      "threat_flag": "none",
+      "note": "NHI-to-human ratios reported between 45:1 and 144:1 depending on environment; 73 percent of NHI-held secrets carry excessive permissions; 92 percent of organizations say current IAM tools cannot manage AI agent identities. Market-conditions evidence, useful for LinkedIn framing rather than as a load-bearing citation.",
+      "domain": "Market",
+      "claims": [
+        "MKT",
+        "AC"
+      ],
+      "relation": "supports",
+      "strength": "emerging",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e017",
+      "added": "2026-07-27",
+      "title": "The Non-Human Identity Governance Vacuum",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-whitepaper-nonhuman-identity-agentic-ai-governance-v1-cs/",
+      "source": "Cloud Security Alliance",
+      "tier": 1,
+      "type": "industry_standard",
+      "published": "2026",
+      "stance": "supports",
+      "conditions": [
+        "MKT",
+        "3.1"
+      ],
+      "threat_flag": "none",
+      "note": "CSA whitepaper framing NHI and agentic AI governance as a vacuum. Institutional corroboration that the gap is recognized, from a body that predates the thesis.",
+      "domain": "Identity",
+      "claims": [
+        "MKT",
+        "AC"
+      ],
+      "relation": "supports",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e018",
+      "added": "2026-07-27",
+      "title": "Agent Control Protocol (ACP): Admission Control for Agent Actions",
+      "url": "https://arxiv.org/html/2603.18829v6",
+      "source": "arXiv 2603.18829",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-03",
+      "stance": "complicates",
+      "conditions": [
+        "OBJ",
+        "3.4"
+      ],
+      "threat_flag": "prior_art",
+      "note": "Technical specification and reference implementation for admission control at the agent action boundary. Same inline-enforcement pattern as Section 5.1, with a concrete protocol. Relevant to the Section 5.5 concession that the discipline may be implemented inside existing machinery.",
+      "domain": "Runtime",
+      "claims": [
+        "RA",
+        "OBJ"
+      ],
+      "relation": "differentiates",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e019",
+      "added": "2026-07-27",
+      "title": "Proof of Execution: Runtime Verification for Governed AI Agent Actions",
+      "url": "https://arxiv.org/abs/2607.05397",
+      "source": "arXiv 2607.05397 (Rhodes & Kang)",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-04-26",
+      "stance": "complicates",
+      "conditions": [
+        "EV",
+        "OBJ",
+        "3.2"
+      ],
+      "claims": [
+        "GE",
+        "RA",
+        "OBJ",
+        "PE"
+      ],
+      "domain": "Verification",
+      "relation": "differentiates",
+      "strength": "supporting",
+      "threat_flag": "prior_art",
+      "note": "Formalizes execution as a triple (contract C, Execution Causal Event Stream T, replay context R) with five validator-checkable invariants and five semantic guarantees: authorization, path compliance, null effect on deny, history integrity, replayability. Includes soundness and replay theorems with witness constructions. Overlaps AOI on execution as evaluation object, deterministic inline enforcement, null effect after denial, integrity and replayability, and independently checkable execution history. Does not evaluate contextual validity, intent conformance, or causal origin; establishes that execution followed a valid contract and path rather than whether the execution was institutionally legitimate.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e020",
+      "added": "2026-07-27",
+      "title": "Governing Actions, Not Agents: Institutional Attestation as a Governance Model for Autonomous AI Systems",
+      "url": "https://arxiv.org/abs/2606.26298",
+      "source": "arXiv 2606.26298 (Salfeld-Nebgen)",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-06-24",
+      "stance": "complicates",
+      "conditions": [
+        "OBJ",
+        "EV",
+        "3.4"
+      ],
+      "claims": [
+        "OBJ",
+        "GE",
+        "EL"
+      ],
+      "domain": "Evidence",
+      "relation": "differentiates",
+      "strength": "supporting",
+      "threat_flag": "prior_art",
+      "note": "Observes that human institutions have governed autonomous actors by requiring independently attested evidence at the point of consequential action rather than by monitoring reasoning. Agent retains planning and reasoning autonomy but holds no execution authority over designated high-risk actions. Execution is conditional on preconditions each independently attested by a separate authoritative source, cryptographically bound to a declared intent, evaluated by deterministic policy, and recorded in a tamper-evident log amenable to independent re-verification. Examples from software deployment and clinical prescribing; proof-of-concept on GitHub. Bears on OBJ, GE, and condition 3.4.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e021",
+      "added": "2026-07-27",
+      "title": "Described vs. Established Governance in Agentic AI: Closing the Gap Between Policy and Enforcement",
+      "url": "https://doi.org/10.2139/ssrn.6592238",
+      "source": "SSRN (Cavallo)",
+      "tier": 1,
+      "type": "research",
+      "published": "2026",
+      "stance": "supports",
+      "conditions": [
+        "EV"
+      ],
+      "claims": [
+        "PE",
+        "GE"
+      ],
+      "domain": "Policy",
+      "relation": "supports",
+      "strength": "supporting",
+      "threat_flag": "none",
+      "note": "Supplied by Justin. Frames the gap between governance as described in policy and governance as operationally established. Directly supports Section 3.8's distinction between security correctness and governance legitimacy, and the Section 4.4 observation that the common failure is describing an E0 control as fully audited.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e022",
+      "added": "2026-07-27",
+      "title": "State-Aware Runtime for Long-Horizon LLM Agents: A Conceptual Framework and Research Agenda",
+      "url": "https://www.cambridge.org/engage/coe/article-details/6a4abb75810b9dcc82ce84f2",
+      "source": "Cambridge Open Engage",
+      "tier": 1,
+      "type": "research",
+      "published": "2026",
+      "stance": "supports",
+      "conditions": [
+        "3.3"
+      ],
+      "claims": [
+        "AD",
+        "CD",
+        "RA"
+      ],
+      "domain": "Memory/State",
+      "relation": "complements",
+      "strength": "emerging",
+      "threat_flag": "none",
+      "note": "Conceptual framework and research agenda for state-aware runtime across long-horizon agent operation. Bears on AD and on the Section 6.1 assumption that business systems can be consulted at execution latency. CD tag is provisional: the source addresses state persistence, and qualifies for CD only where it substantively treats capability evolution.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e023",
+      "added": "2026-07-27",
+      "title": "Agency doctrine: actual authority, apparent authority, and ratification",
+      "url": "https://blogs.law.ox.ac.uk/oblb/blog-post/2025/04/overview-agency-doctrine",
+      "source": "Oxford Business Law Blog",
+      "tier": 1,
+      "type": "legal_doctrine",
+      "published": "2025-04",
+      "stance": "supports",
+      "conditions": [
+        "3.2",
+        "3.4"
+      ],
+      "claims": [
+        "EL",
+        "AC"
+      ],
+      "domain": "Legal",
+      "relation": "complements",
+      "strength": "foundational",
+      "threat_flag": "none",
+      "note": "Governance analogue and legal foundation rather than a doctrinal conclusion about software agents. Actual authority, apparent authority, and ratification establish that possession of apparent permission does not prove actual authority; that third parties may act on authority that is operationally credible but institutionally defective; and that later acceptance of an act differs from prior legitimacy. Apparent authority resembles the structure of Appendix C.1, though prompt injection and delegated software action are not doctrinally identical to it absent jurisdiction-specific authority. Ratification is the closest legal analogue to Section 5.2 post-hoc attestation, including its all-or-nothing character.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e024",
+      "added": "2026-07-27",
+      "title": "Mission command doctrine: commander's intent and disciplined initiative",
+      "url": "https://www.doctrine.af.mil/Portals/61/documents/AFDP_1-1/AFDP%201-1%20Mission%20Command.pdf",
+      "source": "US Air Force AFDP 1-1",
+      "tier": 1,
+      "type": "doctrine",
+      "published": "2023-08-14",
+      "stance": "supports",
+      "conditions": [
+        "3.4"
+      ],
+      "claims": [
+        "EL",
+        "AC"
+      ],
+      "domain": "Ops Doctrine",
+      "relation": "supports",
+      "strength": "foundational",
+      "threat_flag": "none",
+      "note": "Mission command combines centralized intent with decentralized execution. Commander's intent is doctrinally defined as a concise expression of purpose, method, and end state, including constraints, limitations, assumptions and resources, and is stated as a necessary condition without which mission command cannot be exercised. Subordinates exercise disciplined initiative within it. Establishes an institutional precedent for delegated autonomy bounded by represented intent; does not address machine-readable intent binding. Bears on condition 3.4 and Section 6.2.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e025",
+      "added": "2026-07-27",
+      "title": "Runtime verification and monitorability of safety properties",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-44267-4_25",
+      "source": "Springer / RV literature",
+      "tier": 1,
+      "type": "research",
+      "published": "2023",
+      "stance": "supports",
+      "conditions": [
+        "EV",
+        "OBJ"
+      ],
+      "claims": [
+        "RA",
+        "GE"
+      ],
+      "domain": "Verification",
+      "relation": "supports",
+      "strength": "foundational",
+      "threat_flag": "none",
+      "note": "Monitorability is defined as the ability to return a positive or negative verdict after a finite execution prefix, with the field concentrating on safety properties because violations are always detectable in finite time. This supplies formal grounding for Section 2.2's claim that the evaluable tuple is only complete at execution, and a rigorous way to state which legitimacy conditions are monitorable at all. Also gives Section 4.3's determinism requirement an existing literature to stand on.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e026",
+      "added": "2026-07-27",
+      "title": "Verified runtime validation for partially observable hybrid systems",
+      "url": "https://arxiv.org/pdf/1811.06502",
+      "source": "arXiv 1811.06502",
+      "tier": 1,
+      "type": "research",
+      "published": "2018",
+      "stance": "supports",
+      "conditions": [
+        "3.3",
+        "EV"
+      ],
+      "claims": [
+        "RA",
+        "AD"
+      ],
+      "domain": "Verification",
+      "relation": "supports",
+      "strength": "foundational",
+      "threat_flag": "none",
+      "note": "Synthesizes runtime monitors from provably safe hybrid system models, robust to partial observability from sensor uncertainty and partial controllability from actuator disturbance. The partial-observability treatment is the formal analogue of Section 6.1's admission that contextual validity often proceeds on cached state \u2014 this literature already reasons about what guarantee survives when the monitor cannot see everything. Directly useful for making signal freshness a bounded guarantee rather than a caveat.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e027",
+      "added": "2026-07-27",
+      "title": "Saga pattern, compensating transactions, and durable execution",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/saga",
+      "source": "Azure Architecture Center / long-running transaction literature",
+      "tier": 1,
+      "type": "architecture",
+      "published": "ongoing",
+      "stance": "supports",
+      "conditions": [
+        "OBJ"
+      ],
+      "claims": [
+        "RA",
+        "PE",
+        "OBJ"
+      ],
+      "domain": "Distributed Systems",
+      "relation": "adjacent",
+      "strength": "foundational",
+      "threat_flag": "none",
+      "note": "Long-running transactions abandon locks on non-local resources and use compensating transactions that semantically undo rather than restore prior state, typically coordinated by a durable state machine. Establishes an existing engineering distinction between operations that can be compensated and those that cannot. Bears on the reversibility-based allocation in Section 5.3.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e028",
+      "added": "2026-07-27",
+      "title": "Toward cryptographically verifiable authorization for autonomous AI agents",
+      "url": "https://arxiv.org/abs/2607.21325v1",
+      "source": "arXiv 2607.21325",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-07",
+      "stance": "complicates",
+      "conditions": [
+        "3.2",
+        "EV"
+      ],
+      "claims": [
+        "AC",
+        "GE"
+      ],
+      "domain": "Identity",
+      "relation": "differentiates",
+      "strength": "emerging",
+      "threat_flag": "absorption",
+      "note": "Security hypothesis, preliminary formal model, and proof-of-concept for cryptographically verifiable agent authorization. Watch: if verifiable authorization matures, condition 3.2 moves fully into the covered column and the thesis narrows to 3.3-3.5.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e029",
+      "added": "2026-07-27",
+      "title": "Authenticated Delegation and Authorized AI Agents",
+      "url": "https://arxiv.org/pdf/2501.09674",
+      "source": "arXiv 2501.09674",
+      "tier": 1,
+      "type": "research",
+      "published": "2025-01",
+      "stance": "supports",
+      "conditions": [
+        "3.2"
+      ],
+      "claims": [
+        "AC"
+      ],
+      "domain": "Identity",
+      "relation": "complements",
+      "strength": "supporting",
+      "threat_flag": "none",
+      "note": "Earlier work connecting agency-law delegation concepts to authenticated agent authorization. Useful bridge between the Legal domain entries and the identity standards track, and evidence that the legal framing is already being imported by researchers.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e030",
+      "added": "2026-07-27",
+      "title": "FlowSignal \u2014 Runtime Authority Infrastructure",
+      "url": "https://flowsignal.ai/",
+      "source": "FlowSignal",
+      "tier": 2,
+      "type": "vendor",
+      "published": "2026",
+      "stance": "contests",
+      "conditions": [
+        "OBJ",
+        "3.1",
+        "3.3"
+      ],
+      "claims": [
+        "RA",
+        "AC",
+        "EL"
+      ],
+      "domain": "Runtime",
+      "relation": "differentiates",
+      "strength": "supporting",
+      "threat_flag": "naming_collision",
+      "note": "Direct naming use of Runtime Admissibility, and the closest terminology overlap in the corpus. Operationalizes governance intent at the execution boundary where authority resolves, sitting between AI decision engines and executing systems so that authority resolves before execution proceeds. Its Authority Validation Sprint (FAVS) applies execution-bound authority validation to a single AI decision surface. Vocabulary in use: runtime admissibility, current authority state, delegation validity, contextual integrity, operational legitimacy, independently verifiable admissibility decisions, governance before consequence. Centers the final bind or consequence-formation boundary.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e031",
+      "added": "2026-07-27",
+      "title": "AgentBound: Verifiable Behavioral Governance for Autonomous AI Agents",
+      "url": "https://arxiv.org/html/2606.30970v1",
+      "source": "arXiv 2606.30970",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-06",
+      "stance": "complicates",
+      "conditions": [
+        "EV",
+        "3.1",
+        "3.2"
+      ],
+      "claims": [
+        "GE",
+        "AC",
+        "RA"
+      ],
+      "domain": "Evidence",
+      "relation": "differentiates",
+      "strength": "supporting",
+      "threat_flag": "prior_art",
+      "note": "Introduces cryptographically verifiable governance receipts binding each executed action to its exact governing policy artifacts, enabling non-repudiable independent replay verification. Composes three independent authorities in parallel: delegated authorization, owner-signed behavioral constitutions, and site action contracts. Introduces a standing delegation model, per-execution policy refreshing, and deterministic obligation enforcement, accommodating both interactive and long-running periodic agents. Bears on GE, AC, and RA.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e032",
+      "added": "2026-07-27",
+      "title": "Reconstructive Authority Model: Runtime Execution Validity Under Partial Observability",
+      "url": "https://arxiv.org/pdf/2604.22898",
+      "source": "arXiv 2604.22898",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-04",
+      "stance": "complicates",
+      "conditions": [
+        "3.1",
+        "3.2",
+        "3.3"
+      ],
+      "claims": [
+        "AC",
+        "RA",
+        "EL"
+      ],
+      "domain": "Verification",
+      "relation": "differentiates",
+      "strength": "supporting",
+      "threat_flag": "prior_art",
+      "note": "Treats authority as reconstructed at execution rather than carried forward from grant, addressing runtime execution validity under partial observability. Companion to e033. Bears on AC, RA, and conditions 3.1 through 3.3.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e033",
+      "added": "2026-07-27",
+      "title": "Operationalizing Reconstructive Authority: Runtime Construction, Dependency Resolution, and Execution Gating in Autonomous Agent Systems",
+      "url": "https://arxiv.org/pdf/2605.23935",
+      "source": "arXiv 2605.23935",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-05",
+      "stance": "complicates",
+      "conditions": [
+        "3.1",
+        "3.2"
+      ],
+      "claims": [
+        "RA",
+        "AC"
+      ],
+      "domain": "Runtime",
+      "relation": "differentiates",
+      "strength": "supporting",
+      "threat_flag": "prior_art",
+      "note": "Operationalizes the reconstructive authority model through runtime construction, dependency resolution, and execution gating in autonomous agent systems. Execution gating addresses the same decision point as Runtime Admissibility, with a dependency-resolution mechanism. Companion to e032.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e034",
+      "added": "2026-07-27",
+      "title": "AI Agent Authorization and Control \u2014 Admissibility in Decision Governance",
+      "url": "https://www.flexrule.com/articles/ai-agent-authorization-and-control",
+      "source": "FlexRule",
+      "tier": 2,
+      "type": "vendor",
+      "published": "2026",
+      "stance": "contests",
+      "conditions": [
+        "OBJ",
+        "3.3"
+      ],
+      "claims": [
+        "RA",
+        "PE"
+      ],
+      "domain": "Policy",
+      "relation": "differentiates",
+      "strength": "emerging",
+      "threat_flag": "naming_collision",
+      "note": "Vendor article distinguishing authorization from admissibility: authorization can be partly static, but admissibility is contextual and situational and must be resolved at runtime, with a decision model determining what actions an actor may take for a specific case in its current situation and context. Describes admissibility as explicit, versioned, testable, and controlled at runtime. Bears on RA and PE.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e035",
+      "added": "2026-07-27",
+      "title": "Harnessing Embodied Agents: Runtime Governance for Policy-Constrained Execution",
+      "url": "https://arxiv.org/html/2604.07833v1",
+      "source": "arXiv 2604.07833",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-04",
+      "stance": "complicates",
+      "conditions": [
+        "OBJ"
+      ],
+      "claims": [
+        "RA",
+        "OBJ"
+      ],
+      "domain": "Robotics",
+      "relation": "differentiates",
+      "strength": "supporting",
+      "threat_flag": "naming_collision",
+      "note": "Robotics application of the term runtime governance. Separates agent cognition from execution oversight by externalizing governance into a dedicated runtime layer performing policy checking, capability admission, execution monitoring, rollback handling, and human override. Capability admission and rollback handling bear on CD and on the reversibility material in Section 5.3.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e036",
+      "added": "2026-07-27",
+      "title": "Authorization and Governance for AI Agents: Runtime Authorization Beyond Identity at Scale",
+      "url": "https://techcommunity.microsoft.com/blog/microsoft-security-blog/authorization-and-governance-for-ai-agents-runtime-authorization-beyond-identity/4509161",
+      "source": "Microsoft Security",
+      "tier": 2,
+      "type": "vendor",
+      "published": "2026",
+      "stance": "contests",
+      "conditions": [
+        "OBJ",
+        "3.1"
+      ],
+      "claims": [
+        "RA",
+        "MKT"
+      ],
+      "domain": "Runtime",
+      "relation": "differentiates",
+      "strength": "emerging",
+      "threat_flag": "naming_collision",
+      "note": "Microsoft Security framing runtime authorization as extending beyond identity at enterprise scale. Companion to the Agent Control Specification entry (e004). Bears on RA and MKT.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e037",
+      "added": "2026-07-27",
+      "title": "From Audit to Admissibility: Why AI Governance Must Move Into The Execution Boundary",
+      "url": "https://medium.com/@indrasnetou/from-audit-to-admissibility-why-ai-governance-must-move-into-the-execution-boundary-9dad5594ebdc",
+      "source": "Medium",
+      "tier": 2,
+      "type": "practitioner",
+      "published": "2026",
+      "stance": "supports",
+      "conditions": [
+        "OBJ",
+        "EV"
+      ],
+      "claims": [
+        "RA",
+        "OBJ",
+        "PE"
+      ],
+      "domain": "Runtime",
+      "relation": "supports",
+      "strength": "emerging",
+      "threat_flag": "naming_collision",
+      "note": "Practitioner argument that model outputs are not admissible actions but proposals, and that if a proposal can directly mutate system state without boundary evaluation, the model becomes a source of authority. Uses admissibility and execution boundary framing. Bears on OBJ, RA, and PE.",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    }
+  ],
+  "title": "AOI Evidence Map",
+  "map_version": "v1.1",
+  "claims": {
+    "EL": {
+      "label": "Execution Legitimacy",
+      "type": "determination",
+      "gloss": "Whether a specific execution remains a legitimate exercise of conferred authority at the moment it occurs. The five conditions operationalize this determination.",
+      "coverage": "Five sources bear on EL as competitors, six as support. Support is strongest from outside AI (mission command, agency doctrine). Competing treatments address individual conditions rather than the integrated five."
+    },
+    "RA": {
+      "label": "Runtime Admissibility",
+      "type": "gate",
+      "gloss": "The determination of whether execution should proceed right now. Not whether memory, data, context, or a consequence is admissible \u2014 those may be inputs or subordinate questions, but RA governs execution.",
+      "coverage": "Most heavily occupied claim in the corpus: ten competing treatments, including one direct naming use (FlowSignal), one vendor drawing the authorization/admissibility distinction (FlexRule), and four implementation protocols (ACP, PoE, AgentBound, Reconstructive Authority). Foundational support comes from runtime verification and monitorability literature. No enterprise-scale operational case study found."
+    },
+    "AC": {
+      "label": "Authority Continuity",
+      "type": "continuity",
+      "gloss": "The preservation of valid, correctly scoped, and traceable authority across identity, delegation, context, and execution as conditions change over time. Broader than delegation-chain correctness: includes whether authority remains legitimate through the interval between grant and effect.",
+      "coverage": "Eleven supporting or complementing sources, five competing. Delegation chains are structurally representable (RFC 8693, RFC 9396) but non-widening is not enforced by construction in any deployed standard. Cross-organizational chain correlation reported unsolved. AgentBound's standing delegation with per-execution refresh is the closest competing treatment of the grant-to-effect interval."
+    },
+    "AD": {
+      "label": "Authority Drift",
+      "type": "failure",
+      "gloss": "The divergence, over time, between authority a system retains and the authority current organizational circumstances would justify. Not privilege accumulation \u2014 a technically correct entitlement may still be illegitimate in current context.",
+      "coverage": "No competing treatments found. Three supporting sources, all indirect. No standardized business-state event vocabulary exists (CAEP covers identity-plane state; deployed vocabularies are narrower still). No unit of measure, continuous formulation, or threshold located in any source."
+    },
+    "CD": {
+      "label": "Capability Drift",
+      "type": "failure",
+      "gloss": "Change in an autonomous system's effective ability to produce consequences without a corresponding reevaluation of the authority governing those capabilities. Arises through learned skills, tool composition, memory, model updates, reusable behaviors, delegation, or environmental change.",
+      "coverage": "No competing treatments found. One source, conceptual. No enterprise implementations located. Note: most candidate sources address state persistence rather than capability evolution and do not qualify."
+    },
+    "GE": {
+      "label": "Governance Evidence",
+      "type": "evidence",
+      "gloss": "Independently reviewable evidence showing what legitimacy determination was made, which authority and contextual signals informed it, and why the execution was permitted, denied, escalated, or attested. Logs may contribute evidence; event records alone do not establish governance reasoning.",
+      "coverage": "Six competing treatments, four supporting. Evidence models with cryptographic binding and replay verification exist (PoE, AgentBound governance receipts); maturity and sufficiency rubrics exist (DEMM, DEMM-Bench). Regulatory demand is documented (EU AI Act Article 12) with no finalized technical standard \u2014 prEN 18229-1 and ISO/IEC 24970 in draft."
+    },
+    "OBJ": {
+      "label": "Evaluation Object",
+      "type": "design",
+      "gloss": "The composite execution event: principal, delegation chain, agent, action, target, context, intent, and provenance relevant to a specific execution. Treated as an adopted and refined architecture choice, not a novelty claim.",
+      "coverage": "Six competing treatments. At least four independent 2026 works locate governance at the execution, execution path, action, or bind boundary. Two supporting sources."
+    },
+    "PE": {
+      "label": "Policy vs Enforcement",
+      "type": "supporting",
+      "gloss": "The distinction between governance that is declared and governance that is operationally established in the execution path. A supporting claim, not AOI-originated.",
+      "coverage": "Well covered externally. Primary source is Cavallo's described-versus-established framing; supported by practitioner and distributed-systems material."
+    },
+    "MKT": {
+      "label": "Market Conditions",
+      "type": "context",
+      "gloss": "External technical, regulatory, operational, and commercial developments that increase the need for Runtime Governance but do not themselves establish its architecture.",
+      "coverage": "Ample. NHI ratios, over-permissioning rates, IAM capability gaps, and regulatory timelines all documented from multiple sources."
+    }
+  },
+  "domains": [
+    "Identity",
+    "Runtime",
+    "Policy",
+    "Verification",
+    "Evidence",
+    "Memory/State",
+    "Legal",
+    "Ops Doctrine",
+    "Distributed Systems",
+    "Regulatory",
+    "Market",
+    "Robotics"
+  ],
+  "relations": {
+    "supports": "Independently corroborates an AOI claim",
+    "complements": "Solves an adjacent piece AOI depends on or would compose with",
+    "adjacent": "Same problem space, different object; useful context",
+    "differentiates": "Overlaps enough that AOI must state how it differs"
+  },
+  "strengths": {
+    "foundational": "Established body of work outside AI; durable, citable, unlikely to be superseded",
+    "supporting": "Peer or standards work directly on point",
+    "emerging": "Preprint, draft, or single-source; may not survive"
+  },
+  "definitions_status": "canonical \u2014 supplied by AO Integrity Research, 2026-07-27",
+  "claim_types": {
+    "determination": "Core determination the discipline makes",
+    "gate": "Decision about whether execution proceeds",
+    "continuity": "Property that must hold across the execution lifecycle",
+    "failure": "Named failure condition",
+    "evidence": "Evidence discipline",
+    "design": "Evaluation design choice",
+    "supporting": "Supporting distinction, not AOI-originated",
+    "context": "External context, not architecture"
+  },
+  "role": "Catalog. Records what exists, what it bears on, and how it relates to AOI claims. Does not recommend, reposition, or edit the thesis \u2014 those are Lane 1 work.",
+  "provenance_note": "suggested_by records who surfaced a source. 'AOI' = internal sweep. Any other value is an external contribution and should be preserved verbatim. This field exists so the corpus can report how much of it AOI did not select.",
+  "id_policy": "Evidence IDs (e001...) are permanent. Never derive from array position, never renumber, never reuse. A withdrawn entry stays in the corpus with withdrawn=true and remains addressable at its original ID; it is not deleted.",
+  "field_notes": {
+    "source": "Venue and, where known, author in parentheses. Not a normalized author field \u2014 no separate author field exists.",
+    "published": "Mixed granularity by design: full date, year-month, year, or 'ongoing'. Render as-is; do not coerce to a year.",
+    "note": "Descriptive summary of what the source establishes and what it bears on.",
+    "type": "Source type: research, standard, vendor, doctrine, legal_doctrine, incident, regulatory, practitioner, analyst, architecture, industry_standard.",
+    "tier": "1 = primary, 2 = secondary.",
+    "coverage": "Per-claim descriptive statement of what is catalogued. Belongs in the claim map."
+  }
+}
