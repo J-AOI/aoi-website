@@ -73,12 +73,10 @@ const metricGroups = [
     metrics: [
       ["Total sources", entries.length],
       ["Primary sources", entries.filter((entry) => entry.tier === 1).length],
-      [
-        "External contributions",
-        entries.filter((entry) => entry.suggested_by && entry.suggested_by !== "AOI").length,
-        "understated",
-      ],
     ],
+    supportingText: `${
+      entries.filter((entry) => entry.suggested_by && entry.suggested_by !== "AOI").length
+    } external contributions recorded.`,
   },
   {
     label: "Classification metrics",
@@ -183,21 +181,18 @@ export default function EvidenceMapPage({ searchParams }) {
                 </h2>
                 <p className="mt-3 text-sm leading-6 text-white/48">{group.description}</p>
                 <div className="mt-6 grid gap-px overflow-hidden border border-white/12 bg-white/12 sm:grid-cols-3 lg:grid-cols-none xl:grid-cols-3">
-                  {group.metrics.map(([label, value, tone]) => (
+                  {group.metrics.map(([label, value]) => (
                     <div key={label} className="bg-aoi-black p-5">
-                      <p
-                        className={`text-3xl font-semibold tracking-tight ${
-                          tone === "understated" ? "text-white/46" : "text-white"
-                        }`}
-                      >
-                        {value}
-                      </p>
+                      <p className="text-3xl font-semibold tracking-tight text-white">{value}</p>
                       <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/42">
                         {label}
                       </p>
                     </div>
                   ))}
                 </div>
+                {group.supportingText ? (
+                  <p className="mt-4 text-sm leading-6 text-white/46">{group.supportingText}</p>
+                ) : null}
               </div>
             ))}
           </div>
@@ -205,7 +200,7 @@ export default function EvidenceMapPage({ searchParams }) {
 
         <Section spacing="compact" className="border-b border-white/10">
           <SectionHeading eyebrow="Claim Map" title="Stored claims and source relationships." size="compact">
-            Coverage statements are rendered exactly as stored in the Schema v6 corpus.
+            Coverage statements are rendered exactly as stored in the Schema v{corpus.schema_version} corpus.
           </SectionHeading>
 
           <ClaimMap claims={claims} entries={entries} />
@@ -291,15 +286,21 @@ export default function EvidenceMapPage({ searchParams }) {
                       />
                       <SourceMeta label="Domain" value={entry.domain} />
                       <SourceMeta label="Published" value={entry.published} />
-                      <SourceMeta label="Suggested provenance" value={entry.suggested_by} />
+                      {entry.suggested_by !== "AOI" ? (
+                        <SourceMeta label="Suggested provenance" value={entry.suggested_by} />
+                      ) : null}
                       <SourceMeta label="Claims" value={entry.claims} />
                       <SourceMeta label="Conditions" value={entry.conditions} />
                       <SourceMeta label="Stance" value={entry.stance} />
                       <SourceMeta label="Relation" value={entry.relation} />
                       <SourceMeta label="Strength" value={entry.strength} />
                       <SourceMeta label="Overlap flag" value={entry.threat_flag} />
-                      <SourceMeta label="Withdrawn" value={String(entry.withdrawn)} />
-                      <SourceMeta label="Withdrawn reason" value={entry.withdrawn_reason} />
+                      {entry.withdrawn === true ? (
+                        <>
+                          <SourceMeta label="Withdrawn" value={String(entry.withdrawn)} />
+                          <SourceMeta label="Withdrawn reason" value={entry.withdrawn_reason} />
+                        </>
+                      ) : null}
                     </dl>
 
                     <p className="mt-5 text-base leading-8 text-white/68">{entry.note}</p>
