@@ -1,7 +1,7 @@
 export const frameworks = [
   {
     title: "Runtime Governance Blueprint",
-    href: "/frameworks/runtime-governance-blueprint",
+    href: "/frameworks",
     description:
       "AOI's expandable framework for understanding governance at runtime.",
   },
