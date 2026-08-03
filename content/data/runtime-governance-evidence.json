@@ -52,6 +52,10 @@
     {
       "run_date": "2026-07-29",
       "note": "Schema v7. Seven notes rewritten descriptively; internal workflow references, deployment guidance, and forward-looking assessments removed."
+    },
+    {
+      "run_date": "2026-08-03",
+      "note": "Seven sources added, all tier 1: two bearing on Capability Drift (previously one source), a certificate-bound admission/execution paper pair, a compositional authority-attenuation mechanism, and two Track B foundational entries from aviation dispatch regulation and financial settlement-finality standards. Red-team corrections applied before merge: CD removed from arXiv 2605.26542, GE removed from PFMI, conditions 3.2 added to arXiv 2607.23586 and 3.5 to arXiv 2606.11632. Corpus JSON was not reachable during the sweep; entries were prepared as an append file and the artifact was left unmodified."
     }
   ],
   "entries": [
@@ -1081,6 +1085,208 @@
       "added_reason": "",
       "withdrawn": false,
       "withdrawn_reason": ""
+    },
+    {
+      "id": "e038",
+      "added": "2026-08-03",
+      "title": "Are You Still the Agent I Authorized? Earned Authority under a Fixed Ceiling for Evolving Agents",
+      "url": "https://arxiv.org/abs/2607.23586",
+      "source": "arXiv 2607.23586",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-07",
+      "stance": "complicates",
+      "conditions": [
+        "3.1",
+        "3.2",
+        "3.3"
+      ],
+      "threat_flag": "prior_art",
+      "note": "Formulates what it calls authorization continuity: whether an existing grant remains valid as a long-lived agent evolves after deployment by retaining experience, acquiring skills and tools, revising workflows, delegating work, and moving across task phases. States that evolution can change both the effects reachable under an old grant and the authority a task requires, and that the required authority may rise, fall, or become incomparable; existing tool policies constrain actions but do not determine when a grant survives this change. Proposes a state-bound model that fixes a transition envelope and an immutable effect ceiling at grant time, distinguishes requested from realized effects, and proves that under complete mediation, sound effect abstraction, attenuating delegation, and monitor integrity, mutation cannot amplify protected effects beyond the user-issued ceiling; agent-produced evidence may allocate authority below the ceiling but cannot raise it, which places the derivation of any additional authority under an evidence condition and bears on condition 3.2. The source's authorization continuity is scoped to grant survival under agent mutation. Vocabulary in use that overlaps AOI's: authorization continuity, authorization drift, admission, effect ceiling. Bears on CD, AC, and conditions 3.1 through 3.3.",
+      "domain": "Verification",
+      "claims": [
+        "CD",
+        "AC",
+        "RA"
+      ],
+      "relation": "differentiates",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e039",
+      "added": "2026-08-03",
+      "title": "ChainCaps: Composition-Safe Tool-Using Agents via Monotonic Capability Attenuation",
+      "url": "https://arxiv.org/abs/2605.26542",
+      "source": "arXiv 2605.26542 (Jiang et al.; AIWILD workshop, ICML 2026)",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-05",
+      "stance": "complicates",
+      "conditions": [
+        "3.3",
+        "3.5"
+      ],
+      "threat_flag": "prior_art",
+      "note": "Names permission laundering: an agent can satisfy every per-tool permission check and still produce an unsafe end-to-end effect, because a restricted value is transformed, mixed, or rewritten before reaching a sink it should not reach. Enforces a runtime invariant in which every value carries a sink-specific authority budget and tool composition propagates budgets by intersection, so a value may lose but never gain authority through composition; states and proves a non-amplification theorem to that effect. Implemented as a transparent MCP proxy requiring no change to agent or tool servers; reports attack success falling from 25-68 percent to 0-4.8 percent across five frontier models on an 82-task suite, with manifest authoring quality, not runtime overhead, identified as the binding deployment constraint. The mechanism governs authority attenuation across a composed tool chain within a session rather than change in an agent's effective ability to produce consequences over time. The paper positions itself as complementary to execution-boundary mechanisms, which it says constrain execution while ChainCaps constrains the authority of derived values. Vocabulary in use that overlaps AOI's: monotonic capability attenuation, authority propagation, declassification. Bears on AC, RA, condition 3.5, and the compositional material in Appendix C.4.",
+      "domain": "Runtime",
+      "claims": [
+        "AC",
+        "RA"
+      ],
+      "relation": "complements",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e040",
+      "added": "2026-08-03",
+      "title": "Governed Capability Evolution: Lifecycle-Time Compatibility Checking and Rollback for AI-Component-Based Systems, with Embodied Agents as Case Study",
+      "url": "https://arxiv.org/abs/2604.08059",
+      "source": "arXiv 2604.08059",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-04",
+      "stance": "complicates",
+      "conditions": [
+        "3.1"
+      ],
+      "threat_flag": "naming_collision",
+      "note": "Formulates governed capability evolution as a software-lifecycle problem: when a capability module evolves into a new version, the hosting system must decide whether the new version may be activated, under what deployment conditions it runs, how it is monitored, and when it is rolled back. Introduces four upgrade compatibility checks (interface, policy, behavioral, recovery) staged into a pipeline of candidate validation, sandbox evaluation, shadow deployment, gated activation, online monitoring, and rollback. Reports that naive upgrade reaches 72.9 percent task success but drives unsafe activation to 60 percent by the final round, while governed upgrade retains 67.4 percent success with zero unsafe activations, and that shadow deployment reveals 40 percent of upgrade regressions invisible to sandbox evaluation alone. States its contribution as extending runtime governance from action execution to capability evolution; the checks are lifecycle-time and pre-activation rather than per-execution. The source's terms are governed capability evolution and runtime governance; it does not use the term Capability Drift. Bears on CD and on the reversibility material in Section 5.3.",
+      "domain": "Robotics",
+      "claims": [
+        "CD",
+        "RA"
+      ],
+      "relation": "complements",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e041",
+      "added": "2026-08-03",
+      "title": "Sovereign Assurance Boundary: Certificate-Bound Admission for Agentic Infrastructure",
+      "url": "https://arxiv.org/abs/2606.11632",
+      "source": "arXiv 2606.11632",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-06",
+      "stance": "complicates",
+      "conditions": [
+        "3.1",
+        "3.2",
+        "3.4",
+        "3.5"
+      ],
+      "threat_flag": "prior_art",
+      "note": "States a control-plane authorization problem: non-deterministic reasoning systems may propose high-stakes mutations to production resources, while IAM, policy engines, consensus protocols, and audit logs either enforce static permissions or record actions only after execution. Introduces a certificate-bound runtime admission boundary that intercepts agent proposals at an assurance airlock, compiles them into typed execution contracts, binds those contracts to cryptographic evidence digests and policy versions, and routes them through consequence-aware certification paths; successful admission emits a signed certificate valid only for a scoped execution identity, revocation epoch, and validity window. The contract-to-certificate-to-execution chain constrains which execution path may follow from a given admitted proposal, which bears on condition 3.5. Formalizes admission and revocation invariants and reports feasibility measurements from a Go prototype over 2,500 admission attempts. Vocabulary in use that overlaps AOI's: runtime admission boundary, execution contract, evidence-bound, consequence-aware certification, replayable. Companion to e042. Bears on RA, GE, OBJ, and conditions 3.1, 3.2, 3.4, and 3.5.",
+      "domain": "Runtime",
+      "claims": [
+        "RA",
+        "GE",
+        "OBJ",
+        "EL"
+      ],
+      "relation": "differentiates",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e042",
+      "added": "2026-08-03",
+      "title": "Sovereign Execution Broker: Enforcing Certificate-Bound Authority in Agentic Control Planes",
+      "url": "https://arxiv.org/abs/2606.20520",
+      "source": "arXiv 2606.20520",
+      "tier": 1,
+      "type": "research",
+      "published": "2026-06-19",
+      "stance": "complicates",
+      "conditions": [
+        "3.1",
+        "3.3"
+      ],
+      "threat_flag": "prior_art",
+      "note": "Execution-side companion to e041. Defines a runtime enforcement boundary that consumes certificates issued by the assurance boundary, verifies that the requested mutation matches the certified execution contract, checks validity windows, policy epochs, revocation epochs, and live-state drift, mints a scoped execution identity, invokes infrastructure APIs, and records signed decision and outcome records. States that production mutation authority should not reside inside non-deterministic reasoning processes, and separates proposal, admission, and execution so that certified authority becomes a short-lived, revocable, auditable runtime capability. Prototype evaluated on AWS and Kubernetes clusters. The live-state drift check compares infrastructure state at execution against the certified contract; it is not a comparison of retained authority against current organizational circumstances, and the entry is therefore not tagged AD. Vocabulary in use that overlaps AOI's: certificate-bound authority, execution broker, live-state drift, signed decision records, revocation epoch. Bears on RA, AC, GE, and the grant-to-effect interval.",
+      "domain": "Runtime",
+      "claims": [
+        "RA",
+        "AC",
+        "GE"
+      ],
+      "relation": "differentiates",
+      "strength": "supporting",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e043",
+      "added": "2026-08-03",
+      "title": "Responsibility for operational control and dispatch release: joint authority, continuous re-release, and non-delegable dispatch",
+      "url": "https://www.ecfr.gov/current/title-14/chapter-I/subchapter-G/part-121/subpart-T/section-121.533",
+      "source": "eCFR - 14 CFR 121.533, with 121.663 (US Federal Aviation Administration)",
+      "tier": 1,
+      "type": "regulatory",
+      "published": "1964-12-31, as amended 1996-01-26",
+      "stance": "supports",
+      "conditions": [
+        "3.1",
+        "3.3"
+      ],
+      "threat_flag": "none",
+      "note": "Governance analogue from aviation regulation, not a doctrinal claim about software agents. The certificate holder is responsible for operational control; the pilot in command and the aircraft dispatcher are jointly responsible for preflight planning, delay, and dispatch release, and under 121.663 both must sign the release and may do so only if both believe the flight can be made with safety. Authority is not settled at release: the dispatcher must monitor the progress of each flight, issue information necessary for its safety, and cancel or redispatch if either the dispatcher or the pilot in command judges that the flight cannot continue to operate safely as planned or released. 121.663 further provides that a dispatcher may delegate authority to sign a release for a particular flight but may not delegate the authority to dispatch. Establishes a long-standing regulatory precedent separating conferred authority, delegable and non-delegable components, evaluation against current conditions, continuing responsibility after release, and a signed record of the determination. Bears on EL, AC, and the grant-to-effect interval; the signed release is an evidence artifact bearing on GE.",
+      "domain": "Aviation",
+      "claims": [
+        "EL",
+        "AC",
+        "GE"
+      ],
+      "relation": "supports",
+      "strength": "foundational",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
+    },
+    {
+      "id": "e044",
+      "added": "2026-08-03",
+      "title": "Principles for financial market infrastructures - Principle 8: Settlement finality",
+      "url": "https://www.bis.org/publ/cpss101a.pdf",
+      "source": "CPSS-IOSCO / CPMI-IOSCO, PFMI (CPMI Papers No 101)",
+      "tier": 1,
+      "type": "standard",
+      "published": "2012-04-16",
+      "stance": "supports",
+      "conditions": [
+        "3.5"
+      ],
+      "threat_flag": "none",
+      "note": "Governance analogue from financial market infrastructure standards, not a doctrinal claim about software agents. Principle 8 requires that an FMI provide clear and certain final settlement, at a minimum by the end of the value date, and intraday or in real time where necessary or preferable. The accompanying legal-basis discussion states that there should be a clear legal basis regarding when settlement finality occurs, in order to define when key financial risks are transferred, including the point at which transactions are irrevocable, and treats settlement finality as a building block for risk management rather than a bookkeeping detail. Establishes an existing international standard requiring that the moment at which an action becomes irrevocable be defined ex ante and be legally determinate, including under participant insolvency. The standard governs the determinacy of the finality boundary; it does not specify evidence of a governance determination, and the entry is therefore not tagged GE. Bears on the reversibility-based allocation in Section 5.3 and on the treatment of the consequence-formation boundary; complements the compensating-transaction material catalogued at e027.",
+      "domain": "Financial Systems",
+      "claims": [
+        "EL",
+        "RA"
+      ],
+      "relation": "complements",
+      "strength": "foundational",
+      "suggested_by": "AOI",
+      "added_reason": "",
+      "withdrawn": false,
+      "withdrawn_reason": ""
     }
   ],
   "title": "AOI Evidence Map",
@@ -1090,43 +1296,43 @@
       "label": "Execution Legitimacy",
       "type": "determination",
       "gloss": "Whether a specific execution remains a legitimate exercise of conferred authority at the moment it occurs. The five conditions operationalize this determination.",
-      "coverage": "Five sources bear on EL as competitors, six as support. Support is strongest from outside AI (mission command, agency doctrine). Competing treatments address individual conditions rather than the integrated five."
+      "coverage": "Fourteen sources. Three added 2026-08-03, all as support or complement rather than competition: aviation dispatch release as a two-party determination made against current conditions, financial settlement finality as an ex ante determinate irrevocability point, and certificate-bound admission as a conditional-execution model. Support remains strongest from outside AI. Competing treatments continue to address individual conditions rather than the integrated five."
     },
     "RA": {
       "label": "Runtime Admissibility",
       "type": "gate",
       "gloss": "The determination of whether execution should proceed right now. Not whether memory, data, context, or a consequence is admissible \u2014 those may be inputs or subordinate questions, but RA governs execution.",
-      "coverage": "Most heavily occupied claim in the corpus: ten competing treatments, including one direct naming use (FlowSignal), one vendor drawing the authorization/admissibility distinction (FlexRule), and four implementation protocols (ACP, PoE, AgentBound, Reconstructive Authority). Foundational support comes from runtime verification and monitorability literature. No enterprise-scale operational case study found."
+      "coverage": "Twenty-one sources. Six added 2026-08-03. The certificate-bound admission and execution pair (arXiv 2606.11632, 2606.20520) is the corpus's first two-paper treatment separating proposal, admission, and execution with a signed artifact carried between them, with prototype measurements on AWS and Kubernetes. Foundational support continues to come from runtime verification and monitorability literature, now joined by financial settlement-finality standards on the ex ante determinacy of the irrevocability point. No enterprise-scale operational case study found."
     },
     "AC": {
       "label": "Authority Continuity",
       "type": "continuity",
       "gloss": "The preservation of valid, correctly scoped, and traceable authority across identity, delegation, context, and execution as conditions change over time. Broader than delegation-chain correctness: includes whether authority remains legitimate through the interval between grant and effect.",
-      "coverage": "Eleven supporting or complementing sources, five competing. Delegation chains are structurally representable (RFC 8693, RFC 9396) but non-widening is not enforced by construction in any deployed standard. Cross-organizational chain correlation reported unsolved. AgentBound's standing delegation with per-execution refresh is the closest competing treatment of the grant-to-effect interval."
+      "coverage": "Twenty sources. Four added 2026-08-03. arXiv 2607.23586 addresses grant survival under agent mutation under the name authorization continuity, with a fixed transition envelope and effect ceiling; arXiv 2606.20520 revalidates against live state at execution rather than at grant. Aviation dispatch regulation (14 CFR 121.533 and 121.663) supplies a long-standing regulatory analogue in which release authority is joint, continuously revisited between release and completion, and non-delegable at the dispatch level. Catalogued treatments continue to address subsets of the claim: agent mutation, infrastructure state, or delegation structure, rather than authority across identity, delegation, organizational context, and execution together. Delegation chains remain structurally representable without non-widening enforced by construction in any deployed standard."
     },
     "AD": {
       "label": "Authority Drift",
       "type": "failure",
       "gloss": "The divergence, over time, between authority a system retains and the authority current organizational circumstances would justify. Not privilege accumulation \u2014 a technically correct entitlement may still be illegitimate in current context.",
-      "coverage": "No competing treatments found. Three supporting sources, all indirect. No standardized business-state event vocabulary exists (CAEP covers identity-plane state; deployed vocabularies are narrower still). No unit of measure, continuous formulation, or threshold located in any source."
+      "coverage": "Three sources, unchanged this week. No competing treatments found, and none of the seven sources added 2026-08-03 competes with the canonical definition. arXiv 2606.20520 checks live-state drift at execution against a certified contract, but that comparison is infrastructure state against a contract rather than retained authority against current organizational circumstances, and it was not tagged AD. No standardized business-state event vocabulary exists. No unit of measure, continuous formulation, or threshold located in any source. AD remains the thinnest claim in the corpus by competing coverage and an open search lane."
     },
     "CD": {
       "label": "Capability Drift",
       "type": "failure",
       "gloss": "Change in an autonomous system's effective ability to produce consequences without a corresponding reevaluation of the authority governing those capabilities. Arises through learned skills, tool composition, memory, model updates, reusable behaviors, delegation, or environmental change.",
-      "coverage": "No competing treatments found. One source, conceptual. No enterprise implementations located. Note: most candidate sources address state persistence rather than capability evolution and do not qualify."
+      "coverage": "Three sources, up from one. Two added 2026-08-03 substantively address capability evolution rather than state persistence: a state-bound authorization model that fixes an immutable effect ceiling at grant time and proves that mutation cannot amplify protected effects beyond it, where the mutations enumerated include acquiring skills and tools, revising workflows, and delegating work (arXiv 2607.23586); and a lifecycle-time upgrade governance pipeline with interface, policy, behavioral, and recovery compatibility checks, gated activation, shadow deployment, online monitoring, and rollback, measured on an embodied-agent testbed (arXiv 2604.08059). Both report formal or quantitative results; neither uses the term Capability Drift. A third source added this week, arXiv 2605.26542, is catalogued under AC and RA rather than CD: it governs authority attenuation across a composed tool chain within a session, which is adjacent compositional attenuation rather than change over time in effective ability to produce consequences. Still absent from the record: any enterprise deployment case study, any continuous measure or threshold for capability change, and any treatment tying capability change to organizational rather than technical authority."
     },
     "GE": {
       "label": "Governance Evidence",
       "type": "evidence",
       "gloss": "Independently reviewable evidence showing what legitimacy determination was made, which authority and contextual signals informed it, and why the execution was permitted, denied, escalated, or attested. Logs may contribute evidence; event records alone do not establish governance reasoning.",
-      "coverage": "Six competing treatments, four supporting. Evidence models with cryptographic binding and replay verification exist (PoE, AgentBound governance receipts); maturity and sufficiency rubrics exist (DEMM, DEMM-Bench). Regulatory demand is documented (EU AI Act Article 12) with no finalized technical standard \u2014 prEN 18229-1 and ISO/IEC 24970 in draft."
+      "coverage": "Thirteen sources. Three added 2026-08-03. Signed decision and outcome records bound to a certified execution contract (arXiv 2606.20520) and evidence-digest binding at admission (arXiv 2606.11632) extend the catalogued set of cryptographically bound evidence models. The signed dispatch release under 14 CFR 121.663 is the corpus's first regulatory instance of a governance artifact that two named parties must both sign before an operation may begin. Regulatory demand remains documented with no finalized technical standard."
     },
     "OBJ": {
       "label": "Evaluation Object",
       "type": "design",
       "gloss": "The composite execution event: principal, delegation chain, agent, action, target, context, intent, and provenance relevant to a specific execution. Treated as an adopted and refined architecture choice, not a novelty claim.",
-      "coverage": "Six competing treatments. At least four independent 2026 works locate governance at the execution, execution path, action, or bind boundary. Two supporting sources."
+      "coverage": "Nine sources. One added 2026-08-03: arXiv 2606.11632 compiles agent proposals into typed execution contracts bound to evidence digests and policy versions, adding a fifth independent 2026 work locating governance at an execution, admission, or bind boundary."
     },
     "PE": {
       "label": "Policy vs Enforcement",
@@ -1153,7 +1359,9 @@
     "Distributed Systems",
     "Regulatory",
     "Market",
-    "Robotics"
+    "Robotics",
+    "Aviation",
+    "Financial Systems"
   ],
   "relations": {
     "supports": "Independently corroborates an AOI claim",
