@@ -1,108 +1,149 @@
 import PageShell from "../components/layout/PageShell";
 import Section from "../components/layout/Section";
-import Eyebrow from "../components/typography/Eyebrow";
+import SectionHeading from "../components/typography/SectionHeading";
 import Button from "../components/ui/Button";
-import CategorySection from "../components/insights/CategorySection";
+import EditorialPreviewBanner from "../components/research/EditorialPreviewBanner";
+import FeaturedResearchGrid from "../components/research/FeaturedResearchGrid";
+import ResearchHero from "../components/research/ResearchHero";
+import ResearchPhaseTimeline from "../components/research/ResearchPhaseTimeline";
+import ThemePathList from "../components/research/ThemePathList";
 import {
-  getInsightsByCategory,
-  insightCategoryDefinitions,
-  insightLibraryStats,
-} from "../data/insights";
+  getArtifactHref,
+  getRrbManifest,
+  getRrbRecords,
+  isEditorialPreviewEnabled,
+} from "../lib/content/rrbManifest";
+import {
+  getFeaturedRrbRecords,
+  getVisibleRrbRecords,
+  groupRecordsByField,
+} from "../lib/content/rrbFilters";
 
-export default function ResearchPage() {
+export const metadata = {
+  title: "Research | AO Integrity",
+  description:
+    "AO Integrity research into what happens when authority and execution diverge.",
+};
+
+function withArtifactHrefs(records) {
+  return records.map((record) => ({
+    ...record,
+    artifactHref: getArtifactHref(record),
+  }));
+}
+
+export default function ResearchPage({ searchParams }) {
+  const manifest = getRrbManifest();
+  const editorialPreview = isEditorialPreviewEnabled(searchParams);
+  const allRecords = getRrbRecords();
+  const visibleRecords = getVisibleRrbRecords(allRecords, editorialPreview);
+  const featuredRecords = withArtifactHrefs(
+    getFeaturedRrbRecords(allRecords, editorialPreview),
+  );
+  const countsByPhase = groupRecordsByField(allRecords, "research_phase");
+  const countsByTheme = groupRecordsByField(allRecords, "primary_theme");
+
+  const phaseCounts = Object.fromEntries(
+    Object.entries(countsByPhase).map(([phase, records]) => [phase, records.length]),
+  );
+  const themeCounts = Object.fromEntries(
+    Object.entries(countsByTheme).map(([theme, records]) => [theme, records.length]),
+  );
+
   return (
     <PageShell>
+      <EditorialPreviewBanner enabled={editorialPreview} />
       <main>
         <Section className="border-b border-white/10 pt-16 sm:pt-20 lg:pt-24">
-          <div className="grid gap-12 lg:grid-cols-[1fr_360px] lg:items-end">
-            <div>
-              <Eyebrow>Research</Eyebrow>
-              <h1 className="mt-7 max-w-5xl text-6xl font-semibold leading-[0.96] tracking-tight text-white sm:text-7xl lg:text-8xl">
-                Runtime Governance research library.
-              </h1>
-              <p className="mt-8 max-w-3xl text-xl leading-8 text-white/64">
-                Independent observations, market signals, framework commentary,
-                executive briefs, and long-form analysis organized for discovery.
-              </p>
-              <div className="mt-8">
-                <Button href="/research/evidence-map" variant="secondary">
-                  Open Evidence Map
-                </Button>
-              </div>
-            </div>
-
-            <div className="border border-white/12 bg-white/[0.025]">
-              {insightLibraryStats.map(([value, label]) => (
-                <div key={label} className="border-b border-white/10 p-5 last:border-b-0">
-                  <p className="text-2xl font-semibold tracking-tight text-white">{value}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/42">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ResearchHero
+            recordCount={editorialPreview ? allRecords.length : visibleRecords.length}
+            previewEnabled={editorialPreview}
+          />
         </Section>
 
         <Section spacing="compact" className="border-b border-white/10 bg-[#050505]">
-          <div className="grid gap-10 lg:grid-cols-[0.45fr_1fr] lg:items-start">
-            <div>
-              <Eyebrow>Library Structure</Eyebrow>
-              <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
-                Find material by governance question, not publication date.
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-white/60">
-                The library is organized around reusable research categories that can
-                hold observations, briefs, evidence notes, and articles as the field
-                develops.
-              </p>
-            </div>
+          <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading
+              eyebrow={editorialPreview ? "Editorial Preview" : "Featured Research"}
+              title="Selected Residual Risk Briefs."
+              size="compact"
+            >
+              {editorialPreview
+                ? "Preview candidates are shown from the approved scaffold without changing their editorial disposition."
+                : "Featured records appear here only after editorial disposition changes to FEATURED."}
+            </SectionHeading>
+            <Button href={editorialPreview ? "/research/archive?preview=editorial" : "/research/archive"} variant="secondary">
+              Browse Archive
+            </Button>
+          </div>
+          <FeaturedResearchGrid
+            records={featuredRecords}
+            editorialPreview={editorialPreview}
+          />
+        </Section>
 
-            <div className="grid gap-px overflow-hidden border border-white/12 bg-white/12 sm:grid-cols-2">
-              {insightCategoryDefinitions.map((category, index) => (
-                <a
-                  key={category.id}
-                  href={`#${category.id}`}
-                  className="group min-h-[184px] bg-aoi-black p-5 transition-colors hover:bg-white/[0.035] sm:p-6"
-                >
-                  <p className="text-xs font-semibold tracking-[0.22em] text-aoi-red">
-                    {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="mt-7 text-2xl font-semibold leading-tight tracking-tight text-white">
-                    {category.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-white/56">{category.summary}</p>
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-white/36 transition-colors group-hover:text-white/56">
-                    Browse category
-                  </p>
-                </a>
-              ))}
-            </div>
+        <Section className="border-b border-white/10">
+          <SectionHeading
+            eyebrow="Research Development"
+            title="How the research question changed."
+          >
+            The corpus develops from broad residual-risk observations toward identity,
+            state, authority, execution consequence, and continuous authority validation.
+          </SectionHeading>
+          <div className="mt-12">
+            <ResearchPhaseTimeline
+              phases={manifest.phase_hypothesis}
+              countsByPhase={phaseCounts}
+            />
           </div>
         </Section>
 
-        <Section spacing="tight">
-          <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <Eyebrow>Research Catalog</Eyebrow>
-              <h2 className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
-                Category-led insight records.
-              </h2>
-            </div>
-            <p className="max-w-md text-sm leading-7 text-white/52">
-              Representative records establish the content model without treating
-              the page as a dated blog feed.
-            </p>
-          </div>
-
-          {insightCategoryDefinitions.map((category, index) => (
-            <CategorySection
-              key={category.id}
-              category={category}
-              insights={getInsightsByCategory(category.id)}
-              index={index}
+        <Section className="border-b border-white/10 bg-[#050505]">
+          <SectionHeading eyebrow="Theme Paths" title="Four public-facing research themes.">
+            Themes use the manifest vocabulary and avoid forcing early briefs into the
+            mature Runtime Governance thesis.
+          </SectionHeading>
+          <div className="mt-12">
+            <ThemePathList
+              themes={manifest.primary_theme_vocabulary}
+              countsByTheme={themeCounts}
             />
-          ))}
+          </div>
+        </Section>
+
+        <Section className="border-b border-white/10">
+          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+            <SectionHeading
+              eyebrow="Archive"
+              title="Browse the Residual Risk Brief archive."
+            >
+              The archive is manifest-driven and artifact-first. Public visibility is
+              controlled by editorial disposition; unpublished records remain hidden
+              outside local editorial preview.
+            </SectionHeading>
+            <Button href={editorialPreview ? "/research/archive?preview=editorial" : "/research/archive"}>
+              Open Archive
+            </Button>
+          </div>
+        </Section>
+
+        <Section spacing="tight" className="bg-[#050505]">
+          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+            <SectionHeading
+              eyebrow="Product Bridge"
+              title="Research supports execution-time authority validation."
+              size="compact"
+            >
+              AO Integrity turns the authority/execution problem into product workflows
+              for validation, evidence, and review.
+            </SectionHeading>
+            <div className="flex flex-col gap-3 sm:flex-row lg:mb-1">
+              <Button href="/platform">Explore Platform</Button>
+              <Button href="/contact" variant="secondary">
+                Request Briefing
+              </Button>
+            </div>
+          </div>
         </Section>
       </main>
     </PageShell>
