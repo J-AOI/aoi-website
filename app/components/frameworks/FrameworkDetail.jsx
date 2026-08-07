@@ -38,12 +38,18 @@ export default function FrameworkDetail({ framework, relatedFrameworks }) {
         </Section>
 
         <Section className="border-b border-white/10 bg-[#050505]">
+          <SectionHeading size="compact" title="Central question">
+            {framework.purpose}
+          </SectionHeading>
+        </Section>
+
+        <Section className="border-b border-white/10">
           <SectionHeading size="compact" title="Why it matters">
             {framework.whyItMatters}
           </SectionHeading>
         </Section>
 
-        <Section className="border-b border-white/10">
+        <Section className="border-b border-white/10 bg-[#050505]">
           <SectionHeading size="compact" title="Key concepts" />
           <div className="mt-10 grid gap-px overflow-hidden border border-white/12 bg-white/12 sm:grid-cols-2 lg:grid-cols-4">
             {framework.keyConcepts.map((concept, index) => (
@@ -59,14 +65,14 @@ export default function FrameworkDetail({ framework, relatedFrameworks }) {
           </div>
         </Section>
 
-        <Section className="border-b border-white/10 bg-[#050505]">
+        <Section className="border-b border-white/10">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <SectionHeading
               eyebrow="Framework Artifact"
               size="compact"
               title={`${framework.number} reference document`}
             >
-              Published PNG preview with the corresponding PDF reference document.
+              Canonical framework preview with the corresponding approved PDF artifact.
             </SectionHeading>
             <div className="flex flex-col gap-3 sm:flex-row lg:mb-1">
               <Button href={framework.imageSrc} variant="secondary">
@@ -87,8 +93,8 @@ export default function FrameworkDetail({ framework, relatedFrameworks }) {
               <Image
                 src={framework.imageSrc}
                 alt={framework.imageAlt}
-                width={1024}
-                height={1536}
+                width={framework.imageWidth}
+                height={framework.imageHeight}
                 sizes="(min-width: 1280px) 1024px, calc(100vw - 40px)"
                 className="h-auto w-full border border-white/12 bg-black"
                 priority
@@ -97,13 +103,13 @@ export default function FrameworkDetail({ framework, relatedFrameworks }) {
           </div>
         </Section>
 
-        <Section className="border-b border-white/10">
+        <Section className="border-b border-white/10 bg-[#050505]">
           <SectionHeading size="compact" title="Key takeaway">
             {framework.keyTakeaway}
           </SectionHeading>
         </Section>
 
-        <Section className="border-b border-white/10 bg-[#050505]">
+        <Section className="border-b border-white/10">
           <SectionHeading size="compact" title="Related frameworks" />
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {relatedFrameworks.map((related) => (

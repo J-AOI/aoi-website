@@ -15,6 +15,16 @@ const nextConfig = {
         destination: "/research/:slug",
         permanent: true,
       },
+      {
+        source: "/frameworks/fw-001-runtime-domain",
+        destination: "/frameworks/fw-001-runtime-governance-domain",
+        permanent: true,
+      },
+      {
+        source: "/frameworks/fw-003-ai-security-playbook",
+        destination: "/frameworks/fw-003-authority-propagation",
+        permanent: true,
+      },
     ];
   },
 };

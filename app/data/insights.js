@@ -47,8 +47,8 @@ export const insights = [
     tags: ["AI operations", "Delegated authority", "Runtime risk"],
     featuredImage: null,
     relatedFrameworks: [
-      "fw-001-runtime-domain",
-      "fw-003-ai-security-playbook",
+      "fw-001-runtime-governance-domain",
+      "fw-003-authority-propagation",
     ],
     relatedConcepts: [
       "Execution Governance",
@@ -100,7 +100,10 @@ export const insights = [
     publicationDate: "2026-07-25",
     tags: ["Governance Questions", "Execution Legitimacy", "Runtime Domain"],
     featuredImage: null,
-    relatedFrameworks: ["fw-001-runtime-domain", "fw-002-authority-lifecycle"],
+    relatedFrameworks: [
+      "fw-001-runtime-governance-domain",
+      "fw-002-authority-lifecycle",
+    ],
     relatedConcepts: [
       "Execution Governance",
       "Execution Legitimacy",
@@ -133,9 +136,9 @@ export const insights = [
     ],
     featuredImage: null,
     relatedFrameworks: [
-      "fw-001-runtime-domain",
+      "fw-001-runtime-governance-domain",
       "fw-002-authority-lifecycle",
-      "fw-003-ai-security-playbook",
+      "fw-003-authority-propagation",
     ],
     relatedConcepts: [
       "Runtime Governance",
@@ -164,8 +167,8 @@ export const insights = [
     tags: ["AI risk", "Executive brief", "Board readiness"],
     featuredImage: null,
     relatedFrameworks: [
-      "fw-001-runtime-domain",
-      "fw-003-ai-security-playbook",
+      "fw-001-runtime-governance-domain",
+      "fw-003-authority-propagation",
     ],
     relatedConcepts: [
       "Runtime Validation",
@@ -192,7 +195,7 @@ export const insights = [
     tags: ["Execution Legitimacy", "Permission management", "Enterprise architecture"],
     featuredImage: null,
     relatedFrameworks: [
-      "fw-001-runtime-domain",
+      "fw-001-runtime-governance-domain",
       "fw-002-authority-lifecycle",
     ],
     relatedConcepts: [

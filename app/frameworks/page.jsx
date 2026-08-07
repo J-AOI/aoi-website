@@ -7,10 +7,10 @@ import FrameworkLibraryCard from "../components/frameworks/FrameworkLibraryCard"
 import { publishedFrameworks } from "../data/frameworks";
 
 const runtimeSequence = [
-  "Authority granted",
-  "Conditions change",
-  "Execution continues",
-  "Authority validated",
+  "Domain defined",
+  "Lifecycle mapped",
+  "Propagation traced",
+  "Legitimacy evaluated",
   "Evidence produced",
 ];
 
@@ -137,9 +137,9 @@ export default function FrameworksPage() {
               moment execution occurs.
             </p>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/58">
-              AO Integrity's frameworks explain how authority changes over time, how
-              execution can outlive legitimate authority, and how governance evidence is
-              produced.
+              AO Integrity's canonical frameworks define the domain, map the authority
+              lifecycle, trace propagation, and evaluate whether execution remained
+              legitimate when it occurred.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Button href="#framework-library">Explore the Framework Library</Button>
@@ -151,10 +151,10 @@ export default function FrameworksPage() {
         </Section>
 
         <Section className="border-b border-white/10 bg-[#050505]">
-          <SectionHeading title="Governance was built around records. Execution now moves continuously.">
-            Authority can be valid when granted. Conditions can later change. Sessions,
-            systems, agents, and workflows may continue operating. Runtime Governance
-            evaluates whether authority remains legitimate when execution occurs.
+          <SectionHeading title="Four frameworks describe one execution-time governance architecture.">
+            FW-001 defines the domain. FW-002 maps the lifecycle. FW-003 explains
+            propagation. FW-004 evaluates execution legitimacy. Together they clarify
+            how authority changes before execution creates consequence.
           </SectionHeading>
           <div className="mt-12">
             <Sequence items={runtimeSequence} />
@@ -184,10 +184,10 @@ export default function FrameworksPage() {
         <Section id="framework-library" className="border-b border-white/10">
           <SectionHeading
             eyebrow="Framework Library"
-            title="Published Runtime Governance frameworks."
+            title="Published canonical AOI frameworks."
           >
-            Each framework addresses a distinct part of the execution-time governance
-            model.
+            Each framework addresses a distinct part of the execution-time authority
+            model without treating the sequence as a rigid hierarchy.
           </SectionHeading>
           <div className="mt-12 grid gap-5">
             {publishedFrameworks.map((framework) => (
