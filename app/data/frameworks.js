@@ -3,7 +3,7 @@ export const frameworks = [
     title: "Runtime Governance Frameworks",
     href: "/frameworks",
     description:
-      "AOI's canonical framework collection for execution-time authority, lifecycle drift, propagation, and legitimacy.",
+      "AO Integrity's canonical framework series for autonomous execution, authority, legitimacy, governance evidence, and consequential action.",
   },
 ];
 
@@ -11,25 +11,25 @@ export const publishedFrameworks = [
   {
     number: "FW-001",
     slug: "fw-001-runtime-governance-domain",
-    title: "The Missing Runtime Domain in the AI Risk Ecosystem",
+    title: "Runtime Governance Domain",
     canonicalName: "Runtime Governance Domain",
     status: "Published canonical framework artifact",
     summary:
-      "Defines the execution-time governance domain and the role of runtime validation when authority becomes action.",
+      "Defines autonomous execution as the governance object evaluated by Runtime Governance.",
     purpose:
-      "What governance layer is needed when authorization, identity, observability, and policy do not determine whether execution is still legitimate?",
+      "What changes when governance must evaluate the execution event itself rather than only the principal or requested operation?",
     whyItMatters:
-      "Authority can be granted correctly and still become stale before or during execution. Runtime Governance identifies the domain where current authority, execution state, and evidence have to be evaluated together.",
+      "Autonomous systems can select actions, invoke tools, delegate work, and adapt after authority has been conferred. Runtime Governance addresses whether the resulting execution remains a legitimate exercise of enterprise authority.",
     keyTakeaway:
-      "Runtime Governance is the layer that validates authority at the point execution creates consequence.",
+      "Runtime Governance evaluates the execution event, not merely the principal requesting access.",
     keyConcepts: [
       "Runtime Governance",
-      "Runtime Validation",
-      "Execution-Time Authority",
+      "Execution Event",
+      "Execution Legitimacy",
       "Governance Evidence",
     ],
     href: "/frameworks/fw-001-runtime-governance-domain",
-    imageSrc: "/frameworks/FW-001-Runtime-Governance-Domain.png",
+    imageSrc: "/frameworks/PNG/FW-001-Runtime-Governance-Domain.png",
     pdfSrc: "/frameworks/FW-001-Runtime-Governance-Domain.pdf",
     imageWidth: 1126,
     imageHeight: 1689,
@@ -39,25 +39,25 @@ export const publishedFrameworks = [
   {
     number: "FW-002",
     slug: "fw-002-authority-lifecycle",
-    title: "The Runtime Authority Lifecycle",
+    title: "Authority Lifecycle",
     canonicalName: "Authority Lifecycle",
     status: "Published canonical framework artifact",
     summary:
-      "Maps how authority moves from a valid grant through change, drift, validation, execution, and evidence.",
+      "Shows how conferred authority can diverge from what current organizational circumstances justify over time.",
     purpose:
-      "How does authority change between the moment it is granted and the moment execution occurs?",
+      "How can authority that was appropriate when conferred cease to reflect current organizational reality?",
     whyItMatters:
-      "Authority is not static. Roles, ownership, risk, system state, and business context can change while active access or execution paths remain in place.",
+      "Matters close, projects conclude, contracts expire, employment changes, and other business conditions can change independently of identity or entitlement state. The authority a system holds can therefore diverge from what current circumstances justify.",
     keyTakeaway:
-      "Authority has a lifecycle, and governance has to account for what changes after the initial grant.",
+      "Authority may remain valid while the conditions that justified its exercise no longer hold.",
     keyConcepts: [
-      "Authority Grant",
+      "Authority Lifecycle",
       "Authority Drift",
-      "Staleness Window",
-      "Evidence",
+      "Contextual Validity",
+      "Current Governing State",
     ],
     href: "/frameworks/fw-002-authority-lifecycle",
-    imageSrc: "/frameworks/FW-002-Authority-Lifecycle.png",
+    imageSrc: "/frameworks/PNG/FW-002-Authority-Lifecycle.png",
     pdfSrc: "/frameworks/FW-002-Authority-Lifecycle.pdf",
     imageWidth: 1126,
     imageHeight: 1689,
@@ -70,21 +70,21 @@ export const publishedFrameworks = [
     canonicalName: "Authority Propagation",
     status: "Published canonical framework artifact",
     summary:
-      "Shows how authority propagates across systems, identities, delegations, runtime state, and execution paths.",
+      "Shows how conferred authority moves through delegation chains across autonomous actors, services, tools, and systems.",
     purpose:
-      "Where does authority travel after it leaves the original approving system, and how can that propagation create risk?",
+      "What must remain true as authority is conveyed through an autonomous execution chain?",
     whyItMatters:
-      "Execution often depends on inherited, delegated, synchronized, or translated authority. Propagation creates governance gaps when downstream systems continue acting on authority whose source state has changed.",
+      "Agents can invoke other agents, tools, services, and systems. Each delegation creates a requirement to preserve authority provenance and prevent downstream authority from exceeding what the preceding hop possessed.",
     keyTakeaway:
-      "Authority risk grows as authority propagates across systems that do not share the same current state.",
+      "Authority may narrow across a delegation chain; it may not widen.",
     keyConcepts: [
+      "Delegation Chain",
+      "Authority Provenance",
       "Authority Propagation",
-      "Delegation",
-      "Runtime State",
-      "Execution Paths",
+      "Execution Event",
     ],
     href: "/frameworks/fw-003-authority-propagation",
-    imageSrc: "/frameworks/FW-003-Authority-Propagation.png",
+    imageSrc: "/frameworks/PNG/FW-003-Authority-Propagation.png",
     pdfSrc: "/frameworks/FW-003-Authority-Propagation.pdf",
     imageWidth: 1221,
     imageHeight: 1188,
@@ -97,26 +97,84 @@ export const publishedFrameworks = [
     canonicalName: "Execution Legitimacy",
     status: "Published canonical framework artifact",
     summary:
-      "Evaluates whether execution remained legitimate at the moment it occurred under current authority, context, evidence, and consequence.",
+      "Defines the five conditions used to evaluate whether a specific execution remains a legitimate exercise of conferred authority.",
     purpose:
-      "Was this execution still legitimate when it happened?",
+      "Is this specific execution still a legitimate exercise of the authority that was granted?",
     whyItMatters:
-      "A system can execute correctly while the underlying authority is no longer valid, admissible, or defensible. Execution Legitimacy focuses governance on the moment action creates consequence.",
+      "An execution can be authenticated, authorized, policy compliant, and technically correct while still failing the conditions required for governance legitimacy.",
     keyTakeaway:
-      "Legitimate execution requires current-state validation, not only historical permission.",
+      "Execution Legitimacy requires Authority Validity, Authority Provenance, Contextual Validity, Intent Conformance, and Causal Integrity.",
     keyConcepts: [
-      "Execution Legitimacy",
       "Authority Validity",
-      "Runtime Admissibility",
-      "Current-State Verification",
-      "Consequence",
+      "Authority Provenance",
+      "Contextual Validity",
+      "Intent Conformance",
+      "Causal Integrity",
     ],
     href: "/frameworks/fw-004-execution-legitimacy",
-    imageSrc: "/frameworks/FW-004-Execution-Legitimacy.png",
+    imageSrc: "/frameworks/PNG/FW-004-Execution-Legitimacy.png",
     pdfSrc: "/frameworks/FW-004-Execution-Legitimacy.pdf",
     imageWidth: 1126,
     imageHeight: 1689,
     imageAlt: "FW-004 Execution Legitimacy framework artifact preview.",
+  },
+  {
+    number: "FW-005",
+    slug: "fw-005-governance-evidence",
+    title: "Governance Evidence",
+    canonicalName: "Governance Evidence Framework",
+    status: "Published canonical framework artifact",
+    summary:
+      "Shows how legitimacy determinations become independently verifiable through governance evidence and decision receipts.",
+    purpose:
+      "How can another party later determine why an execution was considered legitimate?",
+    whyItMatters:
+      "Logs establish that events occurred. Governance Evidence preserves the reasoning and inputs behind a legitimacy determination so that the decision can be independently examined and verified.",
+    keyTakeaway:
+      "Without evidence, legitimacy remains an assertion.",
+    keyConcepts: [
+      "Governance Evidence",
+      "Decision Receipt",
+      "Independent Verification",
+      "Evidence Assurance Levels",
+      "Traceability",
+    ],
+    href: "/frameworks/fw-005-governance-evidence",
+    imageSrc:
+      "/frameworks/PNG/FW-005-Governance-Evidence-Framework.png",
+    pdfSrc: "/frameworks/FW-005-Governance-Evidence-Framework.pdf",
+    imageWidth: 1536,
+    imageHeight: 1024,
+    imageAlt: "FW-005 Governance Evidence framework artifact preview.",
+  },
+  {
+    number: "FW-006",
+    slug: "fw-006-information-to-execution",
+    title: "Information to Execution",
+    canonicalName: "Information to Execution",
+    status: "Published canonical framework artifact",
+    summary:
+      "Separates authorized access, observed information, action selection, execution legitimacy, and consequential execution.",
+    purpose:
+      "Why do authorized information and a warranted action not, by themselves, establish legitimate authority to execute?",
+    whyItMatters:
+      "Autonomous systems can acquire authorized information, carry that context forward, select actions, and create consequential effects. Permission to acquire information does not by itself establish authority for downstream execution.",
+    keyTakeaway:
+      "Permission to know does not, by itself, establish authority to act. A decision to act does not, by itself, establish authority to execute.",
+    keyConcepts: [
+      "Authorized Access",
+      "Observed Information",
+      "Action Selection",
+      "Inherited Constraints",
+      "Execution Legitimacy",
+    ],
+    href: "/frameworks/fw-006-information-to-execution",
+    imageSrc:
+      "/frameworks/PNG/FW-006-Information-to-Execution-Framework.png",
+    pdfSrc: "/frameworks/FW-006-Information-to-Execution-Framework.pdf",
+    imageWidth: 1536,
+    imageHeight: 1024,
+    imageAlt: "FW-006 Information to Execution framework artifact preview.",
   },
 ];
 

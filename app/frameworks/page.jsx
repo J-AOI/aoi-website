@@ -12,6 +12,7 @@ const runtimeSequence = [
   "Propagation traced",
   "Legitimacy evaluated",
   "Evidence produced",
+  "Execution authority separated",
 ];
 
 const architectureSequence = [
@@ -151,15 +152,22 @@ export default function FrameworksPage() {
         </Section>
 
         <Section className="border-b border-white/10 bg-[#050505]">
-          <SectionHeading title="Four frameworks describe one execution-time governance architecture.">
-            FW-001 defines the domain. FW-002 maps the lifecycle. FW-003 explains
-            propagation. FW-004 evaluates execution legitimacy. Together they clarify
-            how authority changes before execution creates consequence.
-          </SectionHeading>
-          <div className="mt-12">
-            <Sequence items={runtimeSequence} />
-          </div>
-        </Section>
+  		<SectionHeading title="Six frameworks describe one execution-time governance architecture.">
+    			<p>
+      				FW-001 defines the Runtime Governance domain. FW-002 maps how authority can
+      				diverge from current circumstances over time. FW-003 traces how authority
+      				propagates through autonomous execution chains. FW-004 defines the conditions
+      				of Execution Legitimacy. FW-005 shows how legitimacy determinations become
+      				independently verifiable through Governance Evidence. FW-006 separates
+      				authorized information and action selection from the authority required for
+      				consequential execution.
+    			</p>
+  		</SectionHeading>
+
+  		<div className="mt-12">
+    			<Sequence items={runtimeSequence} />
+ 		 </div>
+	</Section>
 
         <Section className="border-b border-white/10">
           <SectionHeading title="Runtime Governance operates where authorization becomes action.">
